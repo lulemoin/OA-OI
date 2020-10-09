@@ -4,7 +4,7 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('connection_view');
+		return view('connexion');
 	}
 
 	//--------------------------------------------------------------------

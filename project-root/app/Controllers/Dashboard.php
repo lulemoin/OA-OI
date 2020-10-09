@@ -7,7 +7,7 @@ class Dashboard extends BaseController
 
 	public function index()
 	{
-        checkIt();
+        $bool=checkIt();
 	   //checkIt($_POST['pseudo'],$_POST['password']);
 		/*if($validated)
         {

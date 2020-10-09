@@ -13,13 +13,13 @@
 
     <p><label for="pseudo"> Pseudo</label><input type="text" name="pseudo" id="pseudo"/></p>
     <p><label for="password"> Password</label><input type="password" name="password" id="password"/</p>
-    <input type="submit" value="Valider">
+    <p><input type="submit" value="Valider"></p>
 
 </form>
 
-<h4>Sinon, vous pouvez aussi créer votre compte</h4>
+<h4>Sinon, vous pouvez aussi <a href='/OA-OI_git/project-root/public/creation/'>créer votre compte</a></h4>
 
-<h4>... Ou même entrer sans connexion !</h4>
+<h4>... Ou même <a href='/OA-OI_git/project-root/public/données'> entrer sans connexion ! </a></h4>
 
 
 <?php $content = ob_get_clean(); ?>

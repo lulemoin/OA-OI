@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title><?= $title ?></title>
+    <title><?=$title; ?></title>
     <link href="style.css" rel="stylesheet" />
 </head>
 
@@ -13,7 +13,7 @@
     <ul>
 
         <?=
-        var_dump($navigations);
+        print_r($navigations);
         foreach ($navigations as $name=>$link)
         {
             echo '<li><a href='.$link.'></a>'.$name.'</li>';
@@ -21,8 +21,6 @@
 
     </ul>
 </nav>
-
-
 
 <?= $content ?>
 </body>

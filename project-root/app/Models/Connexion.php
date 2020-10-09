@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 
-    public function checkIt()
+    function checkIt()
     {
         echo '<p>vérification en cours </p>';
     }
