@@ -1,8 +1,7 @@
 <?php
 namespace App\Models;
 
-    private
-    function checkIt($pseudo, $password)
+    public function checkIt()
     {
         echo '<p>vérification en cours </p>';
     }

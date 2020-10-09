@@ -1,14 +1,13 @@
 <?php namespace App\Controllers;
 
-use namespace App\Models;
+use function App\Models\checkIt;
 
 class Dashboard extends BaseController
 {
 
 	public function index()
 	{
-
-        checkIt($_POST['pseudo'],$_POST['password']);
+        checkIt();
 	   //checkIt($_POST['pseudo'],$_POST['password']);
 		/*if($validated)
         {

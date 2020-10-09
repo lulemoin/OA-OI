@@ -9,7 +9,7 @@
 
 <h2>Connectez-vous pour voir votre profil</h2>
 
-<form action="/OA-OI_git/project-root/public/Dashboard" method="post">
+<form action='/OA-OI_git/project-root/public/Dashboard' method="post">
 
     <p><label for="pseudo"> Pseudo</label><input type="text" name="pseudo" id="pseudo"/></p>
     <p><label for="password"> Password</label><input type="password" name="password" id="password"/</p>
