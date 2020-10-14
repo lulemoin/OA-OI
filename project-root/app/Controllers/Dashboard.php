@@ -4,17 +4,28 @@ use App\Models\UserModel;
 
 class Dashboard extends BaseController
 {
+    public function create()
+    {
+        if ($this->request->getMethod()=="post")
+        {
+            $um = new UserModel();
+            $um->save($_POST);
+            return view('dashboard');
+        }
+        return "<p>Utiliser le formulaire !</p>";
+    }
 
 	public function index()
 	{
-        $bool=UserModel::checkIt();
+        $um= new UserModel();
+        $um->checkIt();
 
 	   //checkIt($_POST['pseudo'],$_POST['password']);
 		/*if($validated)
         {
 
         }*/
-	    return view('observatory');
+	    return view('dashboard');
 	}
 
 	public function exploitation($type, $price)

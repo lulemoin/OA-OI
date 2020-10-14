@@ -7,7 +7,7 @@ class Data extends BaseController
 
 	public function index()
 	{
-	    return view('observatory');
+	    return view('data.php');
 	}
 
 

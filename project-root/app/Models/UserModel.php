@@ -7,12 +7,12 @@ use CodeIgniter\Model;
 class UserModel extends Model
 {
     protected $table = 'users';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'user_id';
 
     //protected $returnType = 'array';
    // protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['name', 'email'];
+    protected $allowedFields = ['nom', 'ville', 'prénom', 'email', 'user_profile'];
 
     //protected $useTimestamps = false;
     //protected $createdField = 'created_at';
@@ -22,6 +22,7 @@ class UserModel extends Model
     //protected $validationRules = [];
     //protected $validationMessages = [];
     //protected $skipValidation = false;
+
 
     public function checkIt()
     {
