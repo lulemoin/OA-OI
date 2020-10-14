@@ -7,6 +7,10 @@ class Home extends BaseController
 		return view('connexion');
 	}
 
-	//--------------------------------------------------------------------
+
+    public function creation()
+    {
+        return view('register');
+    }
 
 }

@@ -3,8 +3,12 @@
 
 
 <?php ob_start(); ?>
-<h2> Here i am </h2>
-<h3>Let's see what's going on</h3>
+<h2>Inscrivez-vous</h2>
+<br>
+
+<h4>Choisissez votre profil</h4>
+<!-- Mettre des exemples de profil à sélectionner -->
+
 
 
 <?php $content = ob_get_clean(); ?>
