@@ -15,7 +15,7 @@
             <div class="row">
                 <legend class="col-form-label col-sm-2 pt-0">Type de profil</legend>
                 <div class="col-sm-10">
-                    <div class="form-check">
+                    <div class="form-check" name="user_profile">
                         <input class="form-check-input" type="radio" name="user_profile" id="gridRadios1" value="option1" checked>
                         <label class="form-check-label" for="gridRadios1">
                             Producteur
@@ -46,7 +46,7 @@
              </div>
             <div class="form-row col-md-10">
                 <label for="inputEmail col-sm-2 col-form-label">Email</label>
-                <input name="nom" type="email" class="form-control" id="inputEmail">
+                <input name="email" type="email" class="form-control" id="inputEmail">
             </div>
             <d class="form-row col-md-10">
                     <label for="inputCity col-sm-2 col-form-label">Ville</label>
@@ -70,7 +70,7 @@
         <div class="form-row col-md-10">
             <label name="mot_de_passe" for="inputPassword3" class="col-sm-10 col-form-label">Mot de passe</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3">
+                <input name="mot_de_passe" type="password" class="form-control" id="inputPassword3">
             </div>
         </div>
         <div class="form-row col-md-10">
@@ -79,7 +79,7 @@
                 <input type="password" class="form-control" id="inputPassword3">
             </div>
         </div>
-
+    
         <div class="form-row col-md-10">
             <div class="col-sm-10">
                 <div class="form-check">
@@ -90,7 +90,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group row">
+        <div class="form row col-md-2">
             <div class="col-sm-10">
                 <button type="submit" class="btn btn-primary">Créer le compte</button>
             </div>

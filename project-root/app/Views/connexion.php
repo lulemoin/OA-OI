@@ -11,10 +11,17 @@
 
 <form action='/OA-OI_git/project-root/public/dashboard' method="post">
 
-    <p><label for="pseudo"> Pseudo</label><input type="text" name="pseudo" id="pseudo"/></p>
-    <p><label for="password"> Password</label><input type="password" name="password" id="password"/</p>
-    <p><input type="submit" value="Valider"></p>
-
+    <div class="form-row col-sm-10">
+        <label for="inputSurname col-sm-2 col-form-label">Prénom</label>
+        <input name="prenom" type="text" class="form-control " id="inputSurame">
+    </div>
+    <div class="form-row col-md-10">
+        <label for="inputName col-sm-2 col-form-label">Nom</label>
+        <input name="nom" type="text" class="form-control" id="inputName">
+    </div>
+    <div>
+        <p><input type="submit" value="Valider"></p>
+    </div>
 </form>
 
 <h4>Sinon, vous pouvez aussi <a href='/OA-OI_git/project-root/public/register'> créer votre compte</a></h4>
