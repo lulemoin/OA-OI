@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use App\Models\UsersModel;
+use phpDocumentor\Reflection\Location;
 
 class Dashboard extends BaseController
 {
