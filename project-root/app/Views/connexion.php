@@ -12,12 +12,12 @@
 <form action='/OA-OI_git/project-root/public/dashboard' method="post">
 
     <div class="form-row col-sm-10">
-        <label for="inputSurname col-sm-2 col-form-label">Prénom</label>
-        <input name="prenom" type="text" class="form-control " id="inputSurame">
+        <label for="inputLogin col-sm-2 col-form-label">Login</label>
+        <input name="login" type="text" class="form-control " id="inputLogin">
     </div>
     <div class="form-row col-md-10">
-        <label for="inputName col-sm-2 col-form-label">Nom</label>
-        <input name="nom" type="text" class="form-control" id="inputName">
+        <label for="inputPassword col-sm-2 col-form-label">Mot de passe</label>
+        <input name="password" type="password" class="form-control" id="inputPassword">
     </div>
     <div>
         <p><input type="submit" value="Valider"></p>
