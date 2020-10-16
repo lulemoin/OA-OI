@@ -14,7 +14,7 @@
     <div class="container col-md-10">
         <div class="row">
     <?php for($i=0; $i<3 ; $i++): ?>
-            <div class="card col-md-3 mr-auto mb-3">
+            <div class="card col-md-3 mr-auto mb-5">
                 <img src="/OA-OI_git/project-root/public/project.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Le nom du projet</h5>
