@@ -20,7 +20,7 @@ else if($_SESSION['user_profile']=='producteur') {
 else if($_SESSION['user_profile']=='agence de developpement') {
     $navs = [
         "Data" => "/OA-OI_git/project-root/public/Data",
-        "Mes projets" => "/OA-OI_git/project-root/public/Projet",
+        "Mes projets" => "/OA-OI_git/project-root/public/Project",
         "Déconnexion"=>"/OA-OI_git/project-root/public/Deconnexion"
     ];
 }

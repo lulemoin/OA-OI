@@ -9,13 +9,13 @@ class Dashboard extends BaseController
     public function create()
     {
         session_start();
+        $_POST['user_profile']=$_POST['user_profile'][0];
         if ($this->request->getMethod()=="post")
         {
             $um = new UsersModel();
 
             if($um->alreadyExists($_POST['login'])){
-                $data['doublon']=1;
-                return view('register_view', $data);
+                return view('register_view', ['doublon'=>1]);
             }
             else {
 
@@ -25,7 +25,7 @@ class Dashboard extends BaseController
                     $e->getMessage();
                 }
                 $_SESSION['connected'] = true;
-                $_SESSION['user_profile'] = $_POST['user_profile'][0];
+                $_SESSION['user_profile'] = $_POST['user_profile'];
 
                 return view('dashboard_view');
             }

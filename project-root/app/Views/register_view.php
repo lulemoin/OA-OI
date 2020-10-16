@@ -14,7 +14,7 @@
 <!-- Mettre des exemples de profil à sélectionner -->
 <div>
     <h2 class="mb-4">Inscrivez-vous</h2>
-    <form class="col-md-10" action="/OA-OI_git/project-root/public/dashboard/create" method="post">
+    <form class="col-md-10" action="/OA-OI_git/project-root/public/Dashboard/create" method="post">
 
         <fieldset class="form-group">
             <div class="row">
@@ -63,13 +63,13 @@
                 <label for="inputCitycol-form-label">Ville</label>
                 <input name="ville" type="text" class="form-control" id="inputCity">
             </div>
-            <div class="form-group col-md-4">
+           <!-- <div class="form-group col-md-4">
                 <label for="inputState">Pays</label>
                 <select name="pays" id="inputState" class="form-control">
                     <option selected>France</option>
                     <option>...</option>
                 </select>
-            </div>
+            </div>-->
         </div>
 
 <!--
@@ -81,7 +81,7 @@
 
         <div class="form-group mt-5">
             <label for="inputLogin col-form-label">Login</label>
-            <input name="login" type="text" class="form-control " id="inputLogin">
+            <input name="login" required="required" type="text" class="form-control " id="inputLogin">
         </div>
 
         <div class="form-group mt-2">
