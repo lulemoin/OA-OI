@@ -15,7 +15,8 @@ class Deconnexion extends BaseController
 
 	public function end(){
         session_start();
-	    session_destroy();
+	    $_SESSION['user_profile']=null;
+        $_SESSION['connected']=false;
 	    return view('connexion_view',['login'=>0]);
 
     }
