@@ -16,7 +16,8 @@ class Deconnexion extends BaseController
 	public function end(){
         session_start();
 	    session_destroy();
-	    return view('connexion_view');
+	    redirect("/OA-OI_git/project-root/public/Home/");
+	    //return view('connexion_view');
 
     }
 

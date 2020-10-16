@@ -14,8 +14,7 @@ class Dashboard extends BaseController
             $um = new UsersModel();
 
             if($um->alreadyExists($_POST['login'])){
-                echo '<p>Ce login existe déjà !</p>';
-                return view('register_view');
+                return view('existing_login_view');
             }
 
             else {
@@ -32,7 +31,7 @@ class Dashboard extends BaseController
             }
         }
         else {
-                return "<p>Utiliser le formulaire !</p>";
+                return view('register_view');
         }
     }
 
