@@ -28,14 +28,6 @@ class Dashboard extends BaseController
                 $_SESSION['connected'] = true;
                 $_SESSION['user_profile'] = $_POST['user_profile'][0];
 
-                if ($_SESSION['user_profile'] == 'Producteur') {
-                    echo '<p>Producteur dashboard</p>';
-                } else if ($_SESSION['user_profile'] == 'Agence de développement') {
-                    echo '<p>Agence de développement dashboard</p>';
-                } else if ($_SESSION['user_profile'] == 'Décideur') {
-                    echo '<p>Décideur dashboard</p>';
-                }
-
                 return view('dashboard_view');
             }
         }
