@@ -12,7 +12,9 @@ class Deconnexion extends BaseController
         session_start();
         return view('deconnexion_view');
 	}
+
 	public function end(){
+        session_start();
 	    session_destroy();
 	    return view('connexion_view');
 
