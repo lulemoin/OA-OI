@@ -11,32 +11,6 @@
 
 <body>
 
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-    <a class="navbar-brand" href='/OA-OI_git/project-root/public/Observatory'>OA-OI</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href='/OA-OI_git/project-root/public/Data'>Data <span
-                            class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/OA-OI_git/project-root/public/Dashboard'>Tableau de bord</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/OA-OI_git/project-root/public/Register'>Créer un compte</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/OA-OI_git/project-root/public/'>Connexion</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
 <?php require ('nav_profiled.php'); ?>
 
 <nav class="navbar navbar-expand-md navbar-light bg-light">

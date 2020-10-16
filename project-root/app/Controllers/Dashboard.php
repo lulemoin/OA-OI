@@ -54,12 +54,6 @@ class Dashboard extends BaseController
             $um->checkIt($_POST['login'],$_POST['password']);
         }
 
-
-	   //checkIt($_POST['pseudo'],$_POST['password']);
-		/*if($validated)
-        {
-
-        }*/
 	    return view('dashboard_view');
 	}
 
