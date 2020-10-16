@@ -9,7 +9,7 @@ class Home extends BaseController
         $_SESSION['login']=null;
 	    //if connected return tableau de bord
         //else return connexion
-		return view('connexion');
+		return view('connexion_view');
 	}
 
 

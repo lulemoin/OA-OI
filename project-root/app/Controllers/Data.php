@@ -7,7 +7,8 @@ class Data extends BaseController
 
 	public function index()
 	{
-	    return view('data.php');
+        session_start();
+	    return view('data_view');
 	}
 
 

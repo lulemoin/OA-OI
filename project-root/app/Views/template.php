@@ -37,10 +37,7 @@
     </div>
 </nav>
 
-
-
-
-<?php require('nav_profiled.php') ?>
+<?php require ('nav_profiled.php'); ?>
 
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <a class="navbar-brand" href='/OA-OI_git/project-root/public/Observatory'>OA-OI</a>
@@ -51,19 +48,13 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+
+            <?php foreach($navs as $nav=>$link): ?>
             <li class="nav-item">
-                <a class="nav-link" href='/OA-OI_git/project-root/public/Data'>Data <span
+                <a class="nav-link" href=<?php echo $link; ?> > <?php echo $nav; ?> <span
                             class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/OA-OI_git/project-root/public/Dashboard'>Tableau de bord</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/OA-OI_git/project-root/public/Register'>Créer un compte</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/OA-OI_git/project-root/public/'>Connexion</a>
-            </li>
+            <?php endforeach;?>
         </ul>
     </div>
 </nav>

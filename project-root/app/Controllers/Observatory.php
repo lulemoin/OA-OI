@@ -4,7 +4,8 @@ class Observatory extends BaseController
 {
 	public function index()
 	{
-		return view('observatory');
+        session_start();
+        return view('observatory_view');
 	}
 
 

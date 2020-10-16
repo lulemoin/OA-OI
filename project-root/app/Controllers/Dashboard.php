@@ -5,15 +5,17 @@ use phpDocumentor\Reflection\Location;
 
 class Dashboard extends BaseController
 {
+
     public function create()
     {
+        session_start();
         if ($this->request->getMethod()=="post")
         {
             $um = new UsersModel();
 
             if($um->alreadyExists($_POST['login'])){
                 echo '<p>Ce login existe déjà !</p>';
-                return view('register');
+                return view('register_view');
             }
 
             else {
@@ -24,17 +26,17 @@ class Dashboard extends BaseController
                     $e->getMessage();
                 }
                 $_SESSION['connected'] = true;
-                $_SESSION['user_profile'] = $_POST['user_profile'];
+                $_SESSION['user_profile'] = $_POST['user_profile'][0];
 
-                if ($_SESSION['user_profile'][0] == 'Producteur') {
+                if ($_SESSION['user_profile'] == 'Producteur') {
                     echo '<p>Producteur dashboard</p>';
-                } else if ($_SESSION['user_profile'][0] == 'Agence de développement') {
+                } else if ($_SESSION['user_profile'] == 'Agence de développement') {
                     echo '<p>Agence de développement dashboard</p>';
-                } else if ($_SESSION['user_profile'][0] == 'Décideur') {
+                } else if ($_SESSION['user_profile'] == 'Décideur') {
                     echo '<p>Décideur dashboard</p>';
                 }
 
-                return view('dashboard');
+                return view('dashboard_view');
             }
         }
         else {
@@ -44,6 +46,7 @@ class Dashboard extends BaseController
 
 	public function index()
 	{
+        session_start();
         if ($this->request->getMethod()=="post")
         {
             $_SESSION['connected'] = true;
@@ -57,7 +60,7 @@ class Dashboard extends BaseController
         {
 
         }*/
-	    return view('dashboard');
+	    return view('dashboard_view');
 	}
 
 
