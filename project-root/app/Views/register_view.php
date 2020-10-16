@@ -1,7 +1,14 @@
 <?php $title = 'Register'; ?>
 
-
 <?php ob_start(); ?>
+
+<?php if($doublon==1): ?>
+
+    <div class="alert alert-danger" role="alert">
+        Ce login existe déjà !
+    </div>
+
+<?php endif; ?>
 
 
 <!-- Mettre des exemples de profil à sélectionner -->
@@ -15,21 +22,21 @@
                 <div class="col-sm-10">
                     <div class="form-check" name="user_profile">
                         <input class="form-check-input" type="radio" name="user_profile[]" id="gridRadios1"
-                               value="Producteur" checked>
+                               value="producteur" checked>
                         <label class="form-check-label" for="gridRadios1">
                             Producteur
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="user_profile[]" id="gridRadios2"
-                               value="Agence de développement">
+                               value="agence de developpement">
                         <label class="form-check-label" for="gridRadios2">
                             Agence de développement
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="user_profile[]" id="gridRadios3"
-                               value="Décideur">
+                               value="decideur">
                         <label class="form-check-label" for="gridRadios3">
                             Décideur politique
                         </label>

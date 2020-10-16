@@ -8,7 +8,7 @@ if($_SESSION['user_profile']==null){
     ];
 }
 
-else if($_SESSION['user_profile']=='Producteur') {
+else if($_SESSION['user_profile']=='producteur') {
     $navs = [
         "Data" => "/OA-OI_git/project-root/public/Data",
         "Tableau de bord" => "/OA-OI_git/project-root/public/Dashboard",
@@ -17,7 +17,7 @@ else if($_SESSION['user_profile']=='Producteur') {
     ];
 }
 
-else if($_SESSION['user_profile']=='Agence de développement') {
+else if($_SESSION['user_profile']=='agence de developpement') {
     $navs = [
         "Data" => "/OA-OI_git/project-root/public/Data",
         "Mes projets" => "/OA-OI_git/project-root/public/Projet",
@@ -25,7 +25,7 @@ else if($_SESSION['user_profile']=='Agence de développement') {
     ];
 }
 
-else if($_SESSION['user_profile']=='Décideur'){
+else if($_SESSION['user_profile']=='decideur'){
     $navs=[
         "Data"=>"/OA-OI_git/project-root/public/Data",
         "Le territoire"=>"/OA-OI_git/project-root/public/Zone",

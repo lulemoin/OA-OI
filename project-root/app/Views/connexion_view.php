@@ -1,6 +1,24 @@
 <?php $title = 'Connexion'; ?>
 
 <?php ob_start(); ?>
+
+<?php if($login==1): ?>
+
+    <div class="mt-3 alert alert-danger" role="alert">
+        Le login n'est associé à aucun compte !
+    </div>
+
+<?php endif; ?>
+
+<?php if($login==2): ?>
+
+    <div class="mt-3 alert alert-danger" role="alert">
+        Le mot de passe est incorrect !
+    </div>
+
+<?php endif; ?>
+
+
 <h2 class="mt-2">Bienvenue sur l'observatoire des agricultures de l'océan Indien</h2>
 </br>
 

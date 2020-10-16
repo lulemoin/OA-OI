@@ -8,7 +8,7 @@ class Home extends BaseController
 	    $_SESSION['user_profile']=null;
         $_SESSION['login']=null;
 
-		return view('connexion_view');
+		return view('connexion_view',['login'=>0]);
 	}
 
 

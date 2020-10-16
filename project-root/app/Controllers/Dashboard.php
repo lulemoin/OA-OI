@@ -14,9 +14,9 @@ class Dashboard extends BaseController
             $um = new UsersModel();
 
             if($um->alreadyExists($_POST['login'])){
-                return view('existing_login_view');
+                $data['doublon']=1;
+                return view('register_view', $data);
             }
-
             else {
 
                 try {
@@ -42,10 +42,20 @@ class Dashboard extends BaseController
         {
             $_SESSION['connected'] = true;
             $um = new UsersModel();
-            $um->checkIt($_POST['login'],$_POST['password']);
+            $rep=$um->checkIt($_POST['login'],$_POST['password']);
+
+            if($rep==0){// le login n'existe pas
+                return view('connexion_view',['login'=>1]);
+
+            }else if($rep==1){//c'est bon !
+                return view('dashboard_view');
+
+            }else {//le login existe mais le mot de passe n'est pas bon
+                return view('connexion_view',['login'=>2]);
+
+            }
         }
 
-	    return view('dashboard_view');
 	}
 
 

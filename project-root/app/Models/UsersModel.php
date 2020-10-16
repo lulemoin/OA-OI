@@ -39,25 +39,20 @@ class UsersModel extends Model
 
     public function checkIt($login, $password)
     {
-        echo '<p>vérification en cours </p>';
-        $user=$this->find($login);
 
+        $user=$this->db->table('users')->where(['login'=>$login])->get()->getRow();
 
         if($user==null){
-            echo '<p> Ce login n\'est pas enregistré dans la base de données, veuillez 
-                    <a href="/OA-OI_git/project-root/public/register"> créer votre compte</a>  ou
-                    <a href="/OA-OI_git/project-root/public/data"> entrer sans connexion ! </a></p>';
-        }
+            return 0;
 
-        if($user!=null && $password==$user['mot_de_passe'])
-        {
-            echo '<p>'. $login .' </p>';
+        } else if($user!=null && $password==$user->mot_de_passe){
+
             $_SESSION['connected']=true;
-            $_SESSION['user_profile']=$user['user_profile'];
+            $_SESSION['user_profile']=$user->user_profile;
+            return true;
         }
         else {
-            echo '<p> Le mot de passe et le login ne correspondent pas ! </p>';
-            dd($_SESSION);
+            return 2;
         }
 
     }
