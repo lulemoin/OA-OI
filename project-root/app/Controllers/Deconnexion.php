@@ -16,17 +16,11 @@ class Deconnexion extends BaseController
 	public function end(){
         session_start();
 	    session_destroy();
-	    redirect("/OA-OI_git/project-root/public/Home/");
-	    //return view('connexion_view');
+	    return view('connexion_view',['login'=>0]);
 
     }
 
-
-
-
-
-
-	public function exploitation($type, $price)
+    	public function exploitation($type, $price)
     {
         echo '<h2> This is an exploitation of type : '.$type .'</br> it costs'. $price.'</h2>';
 

@@ -24,7 +24,7 @@
 
 <h3 class="mt-3">Connectez-vous pour voir votre profil</h3>
 
-<form action='/OA-OI_git/project-root/public/dashboard' method="post">
+<form action='/OA-OI_git/project-root/public/dashboard/connection' method="post">
 
     <div class="form-row col-md-8 mt-4">
         <label for="inputLogin col-sm-2 col-form-label">Login</label>

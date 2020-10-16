@@ -35,7 +35,7 @@ class Dashboard extends BaseController
         }
     }
 
-	public function index()
+	public function connection()
 	{
         session_start();
         if ($this->request->getMethod()=="post")
@@ -58,16 +58,18 @@ class Dashboard extends BaseController
 
 	}
 
-
-
-
-
-
-	public function exploitation($type, $price)
+	public function index()
     {
-        echo '<h2> This is an exploitation of type : '.$type .'</br> it costs'. $price.'</h2>';
+        session_start();
+        return view('dashboard_view');
 
-	    //return view('exploitation');
+    }
+
+
+	public function exploitation()
+    {
+        session_start();
+        return view('exploitation_view');
 
     }
 	//--------------------------------------------------------------------

@@ -12,7 +12,7 @@ else if($_SESSION['user_profile']=='producteur') {
     $navs = [
         "Data" => "/OA-OI_git/project-root/public/Data",
         "Tableau de bord" => "/OA-OI_git/project-root/public/Dashboard",
-        "Mon exploitation" => "/OA-OI_git/project-root/public/Exploitation",
+        "Mon exploitation" => "/OA-OI_git/project-root/public/Dashboard/exploitation",
         "Déconnexion"=>"/OA-OI_git/project-root/public/Deconnexion"
     ];
 }
