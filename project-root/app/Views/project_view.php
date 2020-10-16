@@ -9,6 +9,16 @@
         <p class="lead">The moon dies stigma like a fantastic star. This paralysis has only been dissolved by a quirky teleporter. </p>
     </div>
 </div>
+
+<div class="btn-group btn-group-toggle mb-5" data-toggle="buttons">
+    <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option1" checked> Se lancer dans un nouveau projet
+    </label>
+    <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option2"> Faire autre chose
+    </label>
+</div>
+
 <?php for($j=0; $j<3 ; $j++): ?>
 
     <div class="container col-md-10">
