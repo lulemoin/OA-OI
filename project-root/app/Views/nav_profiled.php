@@ -1,4 +1,5 @@
 <?php
+//$navs=["OA-OI"=>"/OA-OI_git/project-root/public/Observatory"];
 
 if($_SESSION['user_profile']==null){
     $navs=[
@@ -31,6 +32,7 @@ else if($_SESSION['user_profile']=='decideur'){
         "Le territoire"=>"/OA-OI_git/project-root/public/Zone",
         "Déconnexion"=>"/OA-OI_git/project-root/public/Deconnexion"
     ];
+
 }
 else dd($_SESSION);
 

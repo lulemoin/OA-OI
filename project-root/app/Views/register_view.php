@@ -12,9 +12,10 @@
 
 
 <!-- Mettre des exemples de profil à sélectionner -->
-<div>
-    <h2 class="mb-4">Inscrivez-vous</h2>
-    <form class="col-md-10" action="/OA-OI_git/project-root/public/Dashboard/create" method="post">
+
+<div class="col-md justify-content-center">
+    <h2 class="mb-4 display-4 text-center">Inscrivez-vous</h2>
+    <form class="col-md-12" action="/OA-OI_git/project-root/public/Dashboard/create" method="post">
 
         <fieldset class="form-group">
             <div class="row">
@@ -63,13 +64,13 @@
                 <label for="inputCitycol-form-label">Ville</label>
                 <input name="ville" type="text" class="form-control" id="inputCity">
             </div>
-           <!-- <div class="form-group col-md-4">
+            <div class="form-group col-md-4">
                 <label for="inputState">Pays</label>
                 <select name="pays" id="inputState" class="form-control">
                     <option selected>France</option>
                     <option>...</option>
                 </select>
-            </div>-->
+            </div>
         </div>
 
 <!--
