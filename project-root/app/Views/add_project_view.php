@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 <!-- Mettre des exemples de profil à sélectionner -->
-<div class="container col-md-10 justify-content-center">
+<div class="container col-md-12 justify-content-center">
     <p class="display-4 mb-4 text-center">L'identité du projet</p>
     <form class="col-md" action="/OA-OI_git/project-root/public/project" method="post">
 
