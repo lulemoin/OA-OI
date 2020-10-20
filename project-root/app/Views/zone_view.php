@@ -9,8 +9,9 @@
         </div>
     </div>
 
+    <div id="mapid" class="my-5">
+    </div>
+
 <?php $content = ob_get_clean(); ?>
-
-
 
 <?php require('template.php'); ?>
