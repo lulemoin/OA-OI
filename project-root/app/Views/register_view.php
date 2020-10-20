@@ -4,7 +4,7 @@
 
 <?php if($doublon==1): ?>
 
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger mt-2" role="alert">
         Ce login existe déjà !
     </div>
 
@@ -33,6 +33,13 @@
                                value="agence de developpement">
                         <label class="form-check-label" for="gridRadios2">
                             Agence de développement
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="user_profile[]" id="gridRadios2"
+                               value="chercheur">
+                        <label class="form-check-label" for="gridRadios2">
+                            Chercheur
                         </label>
                     </div>
                     <div class="form-check">

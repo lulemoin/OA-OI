@@ -32,8 +32,17 @@ else if($_SESSION['user_profile']=='decideur'){
         "Le territoire"=>"/OA-OI_git/project-root/public/Zone",
         "Déconnexion"=>"/OA-OI_git/project-root/public/Deconnexion"
     ];
+}
+
+else if($_SESSION['user_profile']=='chercheur'){
+    $navs=[
+        "Data"=>"/OA-OI_git/project-root/public/Data",
+        "Etudes"=>"/OA-OI_git/project-root/public/Study",
+        "Déconnexion"=>"/OA-OI_git/project-root/public/Deconnexion"
+    ];
 
 }
+
 else dd($_SESSION);
 
 

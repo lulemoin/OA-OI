@@ -1,5 +1,6 @@
 <?php $title = 'Zone'; ?>
 
+
 <?php ob_start(); ?>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -9,5 +10,7 @@
     </div>
 
 <?php $content = ob_get_clean(); ?>
+
+
 
 <?php require('template.php'); ?>
