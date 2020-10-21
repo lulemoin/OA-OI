@@ -9,6 +9,10 @@
     </div>
 </div>
 
+    <a class="btn btn-primary" href="/OA-OI_git/project-root/public/Directory/research" role="button">Acteurs</a>
+
 <?php $content = ob_get_clean(); ?>
+
+
 
 <?php require('template.php'); ?>

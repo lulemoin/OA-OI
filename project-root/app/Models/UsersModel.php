@@ -56,6 +56,25 @@ class UsersModel extends Model
         }
 
     }
+
+    public function research($login)
+    {
+        $users=$this->db->table('users')->get()->getResult();
+        $rep=[];
+        foreach($users as $user)
+        {
+            if($this->checkRight($user)){
+                $rep[$user->login]=[$user->nom,$user->prenom, $user->user_profile];
+            }
+        dd($rep);
+        }
+        return $rep;
+    }
+
+    public function checkRight($user)
+    {
+        return true;
+    }
 }
 
 
