@@ -59,17 +59,16 @@ class UsersModel extends Model
 
     public function researchA($arr)
     {
-       /* if(isset($arr['profil']))
-        {
-            echo print_r($arr['profil']);
-            dd($arr['profil']);
-            $users=$this->db->table('users')->where(['user_profile'=>])
-        }*/
-        dd($_SESSION);
-        $users=$this->db->table('users')->whereNotIn('login',[$_SESSION['login']])->get()->getResult();
-        //$users=$this->db->table('users')->get()->getResult();
+        if(isset($arr['profil'])) {
+            $users = $this->db->table('users')->whereIn('user_profile', $arr['profil'])->get()->getResult();
+        }
+        else {
+            $users = $this->db->table('users')->whereNotIn('login', [$_SESSION['login']])->get()->getResult();
+            //$users=$this->db->table('users')->get()->getResult();
+        }
         $rep=[];
         $i=0;
+
         foreach($users as $user)
         {
             if($this->checkRight($user)){

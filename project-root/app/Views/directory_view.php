@@ -25,9 +25,9 @@
 -->
 
 <?php if(isset($users)): ?>
-    <form method="post" action="/OA-OI_git/project-root/public/Directory/researchA" class="my-5 mx-3">
+    <form method="post" action="/OA-OI_git/project-root/public/Directory/researchA" class=" col-md-4 my-5 mx-3">
         <label class="d-flex justify-content-center h4">Critères de recherche :</label>
-        <div class="row justify-content-around">
+        <div class="row justify-content-around ">
             <div class="d-flex flex-column">
                 <div class="form-group mt-2">
                     <div class="form-check">
@@ -62,42 +62,10 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex flex-column">
-                <div class="form-group mt-2">
-                    <div class="form-check">
-                        <input class="form-check-input" name="profil[]" value="producteur" type="checkbox" id="gridCheck1">
-                        <label class="form-check-label" for="gridCheck1">
-                            Producteurs
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                    <div class="form-check">
-                        <input class="form-check-input" name="profil[]" value="decideur" type="checkbox" id="gridCheck2">
-                        <label class="form-check-label" for="gridCheck2">
-                            Décideurs politiques
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                    <div class="form-check">
-                        <input class="form-check-input" name="profil[]" value="chercheur" type="checkbox" id="gridCheck3">
-                        <label class="form-check-label" for="gridCheck3">
-                            Chercheurs
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                    <div class="form-check">
-                        <input class="form-check-input" name="profil[]" value="agence de developpement" type="checkbox" id="gridCheck4">
-                        <label class="form-check-label" for="gridCheck4">
-                            Agence de développement
-                        </label>
-                    </div>
-                </div>
             </div>
         </div>
-        <div class="row col-md-12 my-5 mx-3 justify-content-center">
+
+        <div class="row my-5 mx-3 justify-content-center">
             <button type="submit" class="btn btn-success col-md-4">Actualiser </button>
         </div>
     </form>

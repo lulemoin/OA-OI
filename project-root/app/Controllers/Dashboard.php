@@ -50,7 +50,6 @@ class Dashboard extends BaseController
                 return view('connexion_view',['login'=>1]);
 
             }else if($rep==1){//c'est bon !
-                $_SESSION['connected'] = true;
                 $_SESSION['login']=$_POST['login'];
                 return view('dashboard_view');
 
