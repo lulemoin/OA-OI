@@ -57,16 +57,16 @@ class UsersModel extends Model
 
     }
 
-    public function research($login)
+    public function research()
     {
         $users=$this->db->table('users')->get()->getResult();
         $rep=[];
+        $i=0;
         foreach($users as $user)
         {
             if($this->checkRight($user)){
-                $rep[$user->login]=[$user->nom,$user->prenom, $user->user_profile];
+                $rep["users"][$i++]=[$i, $user->nom,$user->prenom, $user->user_profile];
             }
-        dd($rep);
         }
         return $rep;
     }

@@ -14,8 +14,10 @@ class Directory extends BaseController
 public function research(){
     session_start();
     $um = new UsersModel();
-    $rep = $um->research($_SESSION['login']);
-    return view("directory_view",$rep);
+    $data = $um->research();
+
+    //dd($data);
+    return view("directory_view", $data);
 }
 
 }
