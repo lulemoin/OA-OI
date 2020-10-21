@@ -1,5 +1,5 @@
 <?php
-//$navs=["OA-OI"=>"/OA-OI_git/project-root/public/Observatory"];
+
 $navs=[];
 
 if ($_SESSION['user_profile'] == null) {

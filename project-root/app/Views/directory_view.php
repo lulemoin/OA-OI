@@ -1,4 +1,4 @@
-<?php $title = 'Data'; ?>
+<?php $title = 'Directory'; ?>
 
 <?php ob_start(); ?>
 
@@ -65,7 +65,7 @@
                 </div>
 
             </div>
-            <div class="row my-5 mx-3">
+            <div class="d-flex my-5 mx-3">
                 <button type="submit" class="btn btn-success">Actualiser </button>
             </div>
         </form>
@@ -110,4 +110,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require('template/template.php'); ?>

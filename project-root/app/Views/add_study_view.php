@@ -1,4 +1,4 @@
-<?php $title = 'Add_project'; ?>
+<?php $title = 'Add_study'; ?>
 
 <?php ob_start(); ?>
 
@@ -80,4 +80,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require('template/template.php'); ?>
