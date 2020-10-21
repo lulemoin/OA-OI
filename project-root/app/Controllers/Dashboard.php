@@ -10,6 +10,7 @@ class Dashboard extends BaseController
     {
         session_start();
         $_POST['user_profile']=$_POST['user_profile'][0];
+
         if ($this->request->getMethod()=="post")
         {
             $um = new UsersModel();
@@ -26,6 +27,7 @@ class Dashboard extends BaseController
                 }
                 $_SESSION['connected'] = true;
                 $_SESSION['user_profile'] = $_POST['user_profile'];
+                $_SESSION['login']=$_POST['login'];
 
                 return view('dashboard_view');
             }
@@ -48,6 +50,8 @@ class Dashboard extends BaseController
                 return view('connexion_view',['login'=>1]);
 
             }else if($rep==1){//c'est bon !
+                $_SESSION['connected'] = true;
+                $_SESSION['login']=$_POST['login'];
                 return view('dashboard_view');
 
             }else {//le login existe mais le mot de passe n'est pas bon

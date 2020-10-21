@@ -57,7 +57,29 @@ class UsersModel extends Model
 
     }
 
-    public function research()
+    public function researchA($arr)
+    {
+       /* if(isset($arr['profil']))
+        {
+            echo print_r($arr['profil']);
+            dd($arr['profil']);
+            $users=$this->db->table('users')->where(['user_profile'=>])
+        }*/
+        dd($_SESSION);
+        $users=$this->db->table('users')->whereNotIn('login',[$_SESSION['login']])->get()->getResult();
+        //$users=$this->db->table('users')->get()->getResult();
+        $rep=[];
+        $i=0;
+        foreach($users as $user)
+        {
+            if($this->checkRight($user)){
+                $rep["users"][$i++]=[$i, $user->nom,$user->prenom, $user->user_profile,$user->ville];
+            }
+        }
+        return $rep;
+    }
+
+    public function researchP()
     {
         $users=$this->db->table('users')->get()->getResult();
         $rep=[];
@@ -65,7 +87,7 @@ class UsersModel extends Model
         foreach($users as $user)
         {
             if($this->checkRight($user)){
-                $rep["users"][$i++]=[$i, $user->nom,$user->prenom, $user->user_profile];
+                $rep["users"][$i++]=[$i, $user->nom,$user->prenom, $user->user_profile,$user->ville];
             }
         }
         return $rep;

@@ -11,14 +11,21 @@ class Directory extends BaseController
         return view('directory_view');
 	}
 
-public function research(){
+public function researchA(){
     session_start();
     $um = new UsersModel();
-    $data = $um->research();
+    $data = $um->researchA($_POST);
 
-    //dd($data);
     return view("directory_view", $data);
 }
+
+    public function researchP(){
+        session_start();
+        $um = new UsersModel();
+        $data = $um->researchP();
+
+        return view("directory_view", $data);
+    }
 
 }
 

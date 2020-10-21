@@ -103,13 +103,13 @@
 
         <div class="form-group mt-2">
             <div class="form-check">
-                <input class="form-check-input " type="checkbox" id="gridCheck1">
+                <input class="form-check-input" type="checkbox" id="gridCheck1">
                 <label class="form-check-label" for="gridCheck1">
                     Se souvenir de moi
                 </label>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary mb-5">Créer le compte</button>
+        <button type="submit" class="btn btn-primary mb-5" >Créer le compte</button>
     </form>
 </div>
 

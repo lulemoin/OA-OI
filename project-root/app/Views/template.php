@@ -54,7 +54,7 @@
         </ul>
     </div>
 </nav>
-<div class="container col-9 justify-content-center">
+<div class="container col-10 justify-content-center">
 
     <?= $content ?>
 
