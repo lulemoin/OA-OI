@@ -62,10 +62,14 @@ class UsersModel extends Model
         if(isset($arr['profil'])) {
             $users = $this->db->table('users')->whereIn('user_profile', $arr['profil'])->get()->getResult();
         }
-        else {
+        elseif(isset($_SESSION['login'])){
             $users = $this->db->table('users')->whereNotIn('login', [$_SESSION['login']])->get()->getResult();
             //$users=$this->db->table('users')->get()->getResult();
         }
+        else {
+            $users=$this->db->table('users')->get()->getResult();
+        }
+
         $rep=[];
         $i=0;
 

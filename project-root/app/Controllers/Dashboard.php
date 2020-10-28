@@ -9,7 +9,8 @@ class Dashboard extends BaseController
     public function create()
     {
         session_start();
-        $_POST['user_profile']=$_POST['user_profile'][0];
+
+        $_POST['user_profile']=$_POST['user_profile'][0] .", ". $_POST['user_profile'][1];
 
         if ($this->request->getMethod()=="post")
         {

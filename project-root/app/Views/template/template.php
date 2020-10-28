@@ -59,14 +59,14 @@
 <footer class="page-footer font-small unique-color-dark my-5" >
 
     <!-- Footer Links -->
-    <div class="container col-md-12 text-md-left mt-5 border border-dark" style="background-color: #35B8D3">
+    <div class="container col-md-12 text-md-left mt-5 border border-white bg-light" style="background-color: #35B8D3">
 
         <div class="row mx-5 py-3 justify-content-around ">
 
             <div class="col-md-3 mx-auto text-center">
 
 
-                <h6 class="text-white text-uppercase">CIRAD</h6>
+                <h6 class="text-uppercase">CIRAD</h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
                     consectetur
@@ -77,7 +77,7 @@
             <div class="col-md-3 mx-auto mb-4 text-center">
 
                 <!-- Links -->
-                <h6 class="text-white text-uppercase">Liens utiles</h6>
+                <h6 class="text-uppercase">Liens utiles</h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
                     <p>Your Account</p>
@@ -97,7 +97,7 @@
             <div class="col-md-3 mx-auto mb-md-0 mb-4 text-center">
 
                 <!-- Links -->
-                <h6 class="text-white text-uppercase">Contactez-nous</h6>
+                <h6 class="text-uppercase">Contactez-nous</h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
                     <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
@@ -118,7 +118,7 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="row  border border-dark justify-content-center text-white bg-info my-2">
+    <div class="row border border-dark justify-content-center text-white my-2" style="background-color: #659F87">
         <div class="footer-copyright text-center py-3">© Cirad 2020
             <a href=" https://www.cirad.fr"> Cirad.fr</a>
         </div>

@@ -22,28 +22,28 @@
                 <legend class="col-form-label col-sm-3 pt-0 mb-2">Type de profil</legend>
                 <div class="col-sm-10">
                     <div class="form-check" name="user_profile">
-                        <input class="form-check-input" type="radio" name="user_profile[]" id="gridRadios1"
+                        <input class="form-check-input" type="checkbox" name="user_profile[]" id="gridRadios1"
                                value="producteur" checked>
                         <label class="form-check-label" for="gridRadios1">
                             Producteur
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="user_profile[]" id="gridRadios2"
+                        <input class="form-check-input" type="checkbox" name="user_profile[]" id="gridRadios2"
                                value="agence de developpement">
                         <label class="form-check-label" for="gridRadios2">
                             Agence de développement
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="user_profile[]" id="gridRadios2"
+                        <input class="form-check-input" type="checkbox" name="user_profile[]" id="gridRadios2"
                                value="chercheur">
                         <label class="form-check-label" for="gridRadios2">
                             Chercheur
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="user_profile[]" id="gridRadios3"
+                        <input class="form-check-input" type="checkbox" name="user_profile[]" id="gridRadios3"
                                value="decideur">
                         <label class="form-check-label" for="gridRadios3">
                             Décideur politique
