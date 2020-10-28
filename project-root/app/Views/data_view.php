@@ -8,8 +8,10 @@
         <p class="lead text-center">Je peux ici chercher tout type de données que ce soit par zone géographique ou selon les typologies.</p>
     </div>
 </div>
-    <div id="mapid" class="my-5">
+<div class="d-flex justify-content-end">
+    <div id="mapid" class="m-5 col-md-8">
     </div>
+</div>
 
 
 <?php $content = ob_get_clean(); ?>

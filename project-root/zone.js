@@ -4,7 +4,7 @@ function init() {
         lng: -1.67
     }
 
-    const zoomLevel = 5;
+    const zoomLevel = 10;
     const map = L.map('mapid').setView([Hossegor.lat, Hossegor.lng], zoomLevel);
 
     const Layer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
