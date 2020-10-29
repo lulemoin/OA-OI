@@ -25,24 +25,27 @@
 
 <?php require('nav_profiled.php'); ?>
 
-<nav class="navbar navbar-expand-md navbar-light " style="background-color: #659F87;" id="nb">
-    <a class="navbar-brand" href='/OA-OI_git/project-root/public/Observatory'>OA-OI</a>
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: #007580;" id="nb">
+    <a class="navbar-brand text-white" href='/OA-OI_git/project-root/public/Observatory'>OA-OI</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-        <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse my-0 py-0" id="navbarSupportedContent" >
+        <ul class="navbar-nav mr-auto my-0 py-0">
 
             <?php foreach($navs as $nav=>$link): ?>
             <li class="nav-item">
-                <a class="nav-link" href=<?php echo $link; ?> > <?php echo $nav; ?> <span
+                <a class="nav-link text-white my-0" href=<?php echo $link; ?> > <?php echo $nav; ?> <span
                             class="sr-only">(current)</span></a>
             </li>
             <?php endforeach;?>
         </ul>
     </div>
+    <!--<div class="row jutify-content-right bg-light">
+        <img src="/OA-OI_git/project-root/public/oa-oi.png" width="20%">
+    </div>-->
 </nav>
 <div class="container col-10 justify-content-center my-5">
 
@@ -56,14 +59,14 @@
 <br>
 <br>
 <!-- Footer -->
-<footer class="page-footer font-small unique-color-dark my-5" >
+<footer class="page-footer font-small unique-color-dark mt-5 mb-4" >
 
     <!-- Footer Links -->
-    <div class="container col-md-12 text-md-left mt-5 border border-white bg-light" style="background-color: #35B8D3">
+    <div class="container col-md-12 text-md-left mt-5 border border-white" style="background-color: #75C9DA">
 
         <div class="row mx-5 py-3 justify-content-around ">
 
-            <div class="col-md-3 mx-auto text-center">
+            <div class="col-md-4 mb-4 text-center border-right border-white">
 
 
                 <h6 class="text-uppercase">CIRAD</h6>
@@ -74,23 +77,17 @@
 
             </div>
 
-            <div class="col-md-3 mx-auto mb-4 text-center">
+            <div class="col-md-4 mb-4 text-center border-right border-white">
 
                 <!-- Links -->
                 <h6 class="text-uppercase">Liens utiles</h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <p>Your Account</p>
+                    <a class="text-dark" href="https://www.prerad-oi.org/">Prerad-oi.org</a>
                 </p>
-                <p>
                     <p>Become an Affiliate</p>
-                </p>
-                <p>
                     <p>Shipping Rates</p>
-                </p>
-                <p>
                     <p>Help</p>
-                </p>
 
             </div>
 
@@ -100,13 +97,9 @@
                 <h6 class="text-uppercase">Contactez-nous</h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                    <i class="fas fa-home mr-3"></i> Saint-Denis de la Réunion, 97490 France</p>
                 <p>
-                    <i class="fas fa-envelope mr-3"></i> info@example.com</p>
-                <p>
-                    <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                <p>
-                    <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                    <i class="fas fa-envelope mr-3"></i> Prerad.oi@cirad.fr</p>
 
             </div>
 
@@ -118,12 +111,17 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="row border border-dark justify-content-center text-white my-2" style="background-color: #659F87">
-        <div class="footer-copyright text-center py-3">© Cirad 2020
+    <div class="row border border-dark justify-content-center text-white my-2" style="background-color: #2D747F">
+        <div class="footer-copyright text-center py-3">© Cirad, 2020
             <a href=" https://www.cirad.fr"> Cirad.fr</a>
         </div>
     </div>
-    <!-- Copyright -->
+
+    <div class="bg-white justify-content-center mt-2" >
+        <div class="text-center" style="font-size: 12px">
+            <p>Cette activité est réalisée dans le cadre du projet Interreg-V PRéRAD-OI cofinancé par l'Union européenne et la Région Réunion, avec le soutien du Conseil départemental de la Réunion</p>
+        </div>
+    </div>
 
 </footer>
 <!-- Footer -->
