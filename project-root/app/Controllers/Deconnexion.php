@@ -26,7 +26,6 @@ class Deconnexion extends BaseController
     {
         echo '<h2> This is an exploitation of type : '.$type .'</br> it costs'. $price.'</h2>';
 
-	    //return view('exploitation');
 
     }
 	//--------------------------------------------------------------------

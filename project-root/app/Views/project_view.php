@@ -2,7 +2,7 @@
 
 
 
-<?php if($_SESSION['user_profile']!='agence de developpement'): ?>
+<?php if(strpos($_SESSION['user_profile'],'agence de developpement')===false): ?>
         <?php ob_start(); ?>
             <div class="alert alert-danger" role="alert">
                 Ce n'est pas fait pour vous   !

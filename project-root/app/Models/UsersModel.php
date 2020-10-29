@@ -59,8 +59,33 @@ class UsersModel extends Model
 
     public function researchA($arr)
     {
-        if(isset($arr['profil'])) {
-            $users = $this->db->table('users')->whereIn('user_profile', $arr['profil'])->get()->getResult();
+    $i=0;
+    if(isset($arr['profil'])){
+        while (isset($arr['profil'][$i])){
+                $i++;
+            }
+
+            for($k=$i; $k<=$i; $k++) {
+                for ($j = 0; $j < $i; $j++) {
+                    $arr['profil'][$k++]=$arr['profil'][$j]. ', chercheur';
+                    $arr['profil'][$k++]=$arr['profil'][$j]. ', decideur';
+                    $arr['profil'][$k++]=$arr['profil'][$j]. ', agence de developpement';
+                    $arr['profil'][$k++]=$arr['profil'][$j]. ', producteur';
+                    $arr['profil'][$k++]='producteur, ' . $arr['profil'][$j];
+                    $arr['profil'][$k++]='decideur, ' . $arr['profil'][$j];
+                    $arr['profil'][$k]='agence de developpement, ' . $arr['profil'][$j];
+
+                }
+            }
+
+            //dd($k);
+            //dd($arr);
+
+            $users = $this->db->table('users')
+                ->whereIn('user_profile', $arr['profil'])
+                //->orWhereIn($arr['profil'],'user_profile' ) ne trouve pas des personnes possédant plusieurs types de profil
+                ->get()->getResult();
+
         }
         elseif(isset($_SESSION['login'])){
             $users = $this->db->table('users')->whereNotIn('login', [$_SESSION['login']])->get()->getResult();

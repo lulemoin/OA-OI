@@ -10,7 +10,12 @@ class Dashboard extends BaseController
     {
         session_start();
 
-        $_POST['user_profile']=$_POST['user_profile'][0] .", ". $_POST['user_profile'][1];
+    if(isset($_POST['user_profile'][1])) {
+        $_POST['user_profile'] = $_POST['user_profile'][0] . ", " . $_POST['user_profile'][1];
+    }else{
+        $_POST['user_profile'] = $_POST['user_profile'][0];
+    }
+
 
         if ($this->request->getMethod()=="post")
         {
