@@ -78,9 +78,6 @@ class UsersModel extends Model
                 }
             }
 
-            //dd($k);
-            //dd($arr);
-
             $users = $this->db->table('users')
                 ->whereIn('user_profile', $arr['profil'])
                 //->orWhereIn($arr['profil'],'user_profile' ) ne trouve pas des personnes possédant plusieurs types de profil

@@ -11,7 +11,7 @@
     <?php else: ?>
         <?php ob_start(); ?>
         <div class="jumbotron jumbotron-fluid">
-            <div class="container">
+            <div class="container text-center">
                 <h1 class="display-4">Ici, c'est mon terrain pour l'action</h1>
                 <p class="lead">The moon dies stigma like a fantastic star. This paralysis has only been dissolved by a quirky teleporter. </p>
             </div>
