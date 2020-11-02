@@ -1205,7 +1205,7 @@ opérations additionnels selon des risques</remarks>
     <column id="COL319" populated="true" UUID="fc805e7a-7ba5-4ccb-b974-a09da0c02724" autoIncrement="false" autoIncrementSequenceName="produit_sous_produit_seq" defaultValue="" name="nom_produit" nullable="0" physicalName="nom_produit" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL320" populated="true" UUID="f04fe2a9-9606-4304-b2a3-8c7900665d7c" autoIncrement="false" autoIncrementSequenceName="culture_code_culture_seq" defaultValue="" name="nom_espece" nullable="0" physicalName="nom_espece" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL320" populated="true" UUID="f04fe2a9-9606-4304-b2a3-8c7900665d7c" autoIncrement="false" autoIncrementSequenceName="culture_code_culture_seq" defaultValue="" name="nom_espece_culture" nullable="0" physicalName="nom_espece_culture" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>inclure jachère</remarks>
     </column>
     <column id="COL321" populated="true" UUID="72108f1b-c0ff-49e5-a266-87ab9c9fcf6b" autoIncrement="false" autoIncrementSequenceName="exploitation_code_exp_seq_9" defaultValue="" name="code_exp" nullable="0" physicalName="code_exp" precision="0" primaryKeySeq="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -1225,7 +1225,7 @@ opérations additionnels selon des risques</remarks>
     <folder id="FOLTAB3184" populated="true" name="Indices" physicalName="Indices" type="4">
     <index id="IDX324" populated="true" UUID="85dddddf-7beb-4e48-a6aa-c91ec537d488" clustered="false" name="code_produit_final" physicalName="code_produit_final" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC325" populated="true" UUID="bce9a4b3-1c15-4aec-a64c-fc23e405d159" ascendingOrDescending="UNSPECIFIED" column-ref="COL319" name="nom_produit" physicalName="nom_produit" />
-     <index-column id="IDC326" populated="true" UUID="36d7e739-593c-40aa-a0cc-726564bcc0fb" ascendingOrDescending="UNSPECIFIED" column-ref="COL320" name="nom_espece" physicalName="nom_espece" />
+     <index-column id="IDC326" populated="true" UUID="36d7e739-593c-40aa-a0cc-726564bcc0fb" ascendingOrDescending="UNSPECIFIED" column-ref="COL320" name="nom_espece_culture" physicalName="nom_espece_culture" />
      <index-column id="IDC327" populated="true" UUID="8806ad68-d30b-47e4-aabb-d33831576776" ascendingOrDescending="UNSPECIFIED" column-ref="COL321" name="code_exp" physicalName="code_exp" />
      <index-column id="IDC328" populated="true" UUID="b1b906bf-9680-4646-a565-79de3dbc5c72" ascendingOrDescending="UNSPECIFIED" column-ref="COL322" name="code_cycle_cultural" physicalName="code_cycle_cultural" />
     </index>
@@ -1240,10 +1240,10 @@ opérations additionnels selon des risques</remarks>
     <column id="COL331" populated="true" UUID="5cbe9874-0375-44ba-84b0-246d34294162" autoIncrement="false" autoIncrementSequenceName="cycle_cultural_code_cylce_cultural_seq_6" defaultValue="" name="code_cycle_cultural" nullable="0" physicalName="code_cycle_cultural" precision="0" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL332" populated="true" UUID="216b414a-51be-46be-9919-01b4d150c917" autoIncrement="false" autoIncrementSequenceName="culture_code_culture_seq" defaultValue="" name="nom_espece" nullable="0" physicalName="nom_espece" precision="0" primaryKeySeq="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL332" populated="true" UUID="216b414a-51be-46be-9919-01b4d150c917" autoIncrement="false" autoIncrementSequenceName="culture_code_culture_seq_1" defaultValue="" name="nom_espece_culture" nullable="0" physicalName="nom_espece_culture" precision="0" primaryKeySeq="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>inclure jachère</remarks>
     </column>
-    <column id="COL333" populated="true" UUID="34f80d5f-a236-4749-8990-e7acd39f8f71" autoIncrement="false" autoIncrementSequenceName="produit_sous_produit_seq" defaultValue="" name="nom_produit" nullable="0" physicalName="nom_produit" precision="0" primaryKeySeq="3" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL333" populated="true" UUID="34f80d5f-a236-4749-8990-e7acd39f8f71" autoIncrement="false" autoIncrementSequenceName="produit_sous_produit_seq_1" defaultValue="" name="nom_produit" nullable="0" physicalName="nom_produit" precision="0" primaryKeySeq="3" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL334" populated="true" UUID="01277696-5400-4bfa-8e48-daaf64d618f9" autoIncrement="false" autoIncrementSequenceName="production_volume_produit_seq" defaultValue="" name="masse_produit" nullable="0" physicalName="masse_produit" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="6" userDefinedTypeUUID="7e55bcd0-7606-4153-b749-9c397f12c4d8" >
@@ -1261,7 +1261,7 @@ opérations additionnels selon des risques</remarks>
     <index id="IDX336" populated="true" UUID="5a0367ac-3fdf-4947-89ed-db0ce4adae52" clustered="false" name="code_production" physicalName="code_production" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC337" populated="true" UUID="1ac18edd-4556-4181-86d5-bf38f5e2acb7" ascendingOrDescending="UNSPECIFIED" column-ref="COL330" name="code_exp" physicalName="code_exp" />
      <index-column id="IDC338" populated="true" UUID="03015f90-aa6d-4819-8b8d-477f006935bb" ascendingOrDescending="UNSPECIFIED" column-ref="COL331" name="code_cycle_cultural" physicalName="code_cycle_cultural" />
-     <index-column id="IDC339" populated="true" UUID="a652326b-d4bb-402a-aa0b-2546bf8872e0" ascendingOrDescending="UNSPECIFIED" column-ref="COL332" name="nom_espece" physicalName="nom_espece" />
+     <index-column id="IDC339" populated="true" UUID="a652326b-d4bb-402a-aa0b-2546bf8872e0" ascendingOrDescending="UNSPECIFIED" column-ref="COL332" name="nom_espece_culture" physicalName="nom_espece_culture" />
      <index-column id="IDC340" populated="true" UUID="6b228335-a092-47a8-9e14-4bf48f761cb7" ascendingOrDescending="UNSPECIFIED" column-ref="COL333" name="nom_produit" physicalName="nom_produit" />
     </index>
    </folder>
@@ -1274,16 +1274,16 @@ opérations additionnels selon des risques</remarks>
 ou code ménage pour ménage
 ou autre code pour autre</remarks>
     </column>
-    <column id="COL343" populated="true" UUID="00e2cf41-87f8-443b-8eeb-192e1cfa0447" autoIncrement="false" autoIncrementSequenceName="exploitation_code_exp_seq_10" defaultValue="" name="code_exp" nullable="0" physicalName="code_exp" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL343" populated="true" UUID="00e2cf41-87f8-443b-8eeb-192e1cfa0447" autoIncrement="false" autoIncrementSequenceName="exploitation_code_exp_seq_10_1" defaultValue="" name="code_exp" nullable="0" physicalName="code_exp" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL344" populated="true" UUID="d9757a7a-6b14-4f6e-bf0a-a47c5823052a" autoIncrement="false" autoIncrementSequenceName="cycle_cultural_code_cylce_cultural_seq_6" defaultValue="" name="code_cycle_cultural" nullable="0" physicalName="code_cycle_cultural" precision="0" primaryKeySeq="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL344" populated="true" UUID="d9757a7a-6b14-4f6e-bf0a-a47c5823052a" autoIncrement="false" autoIncrementSequenceName="cycle_cultural_code_cylce_cultural_seq_6_1" defaultValue="" name="code_cycle_cultural" nullable="0" physicalName="code_cycle_cultural" precision="0" primaryKeySeq="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL345" populated="true" UUID="3717529e-e4d2-40e2-b72f-4065f4fd08ff" autoIncrement="false" autoIncrementSequenceName="culture_code_culture_seq" defaultValue="" name="nom_espece" nullable="0" physicalName="nom_espece" precision="0" primaryKeySeq="3" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL345" populated="true" UUID="3717529e-e4d2-40e2-b72f-4065f4fd08ff" autoIncrement="false" autoIncrementSequenceName="culture_code_culture_seq_2" defaultValue="" name="nom_espece_culture" nullable="0" physicalName="nom_espece_culture" precision="0" primaryKeySeq="3" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>inclure jachère</remarks>
     </column>
-    <column id="COL346" populated="true" UUID="4f624066-a7da-490f-8b63-9a183763c4ae" autoIncrement="false" autoIncrementSequenceName="produit_sous_produit_seq" defaultValue="" name="nom_produit" nullable="0" physicalName="nom_produit" precision="0" primaryKeySeq="4" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL346" populated="true" UUID="4f624066-a7da-490f-8b63-9a183763c4ae" autoIncrement="false" autoIncrementSequenceName="produit_sous_produit_seq_2" defaultValue="" name="nom_produit" nullable="0" physicalName="nom_produit" precision="0" primaryKeySeq="4" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL347" populated="true" UUID="2f5ae647-a78e-41db-8a56-86c2eac8f226" autoIncrement="false" autoIncrementSequenceName="beneficiaire_culture_prix_beneficie_seq" defaultValue="" name="prix_beneficie" nullable="0" physicalName="prix_beneficie" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="6" userDefinedTypeUUID="7e55bcd0-7606-4153-b749-9c397f12c4d8" >
@@ -1313,7 +1313,7 @@ perte transport</remarks>
      <index-column id="IDC351" populated="true" UUID="72e3943c-4ee9-4ca4-b08d-aacf772a6491" ascendingOrDescending="UNSPECIFIED" column-ref="COL342" name="code_beneficiaire_culture" physicalName="code_beneficiaire_culture" />
      <index-column id="IDC352" populated="true" UUID="858da3d4-a674-4990-92c3-fd87503fb82b" ascendingOrDescending="UNSPECIFIED" column-ref="COL343" name="code_exp" physicalName="code_exp" />
      <index-column id="IDC353" populated="true" UUID="eea4baf0-db32-4aa3-b261-7917d4bedb9b" ascendingOrDescending="UNSPECIFIED" column-ref="COL344" name="code_cycle_cultural" physicalName="code_cycle_cultural" />
-     <index-column id="IDC354" populated="true" UUID="dfe09ff4-f1f8-4d49-9095-bb628827692a" ascendingOrDescending="UNSPECIFIED" column-ref="COL345" name="nom_espece" physicalName="nom_espece" />
+     <index-column id="IDC354" populated="true" UUID="dfe09ff4-f1f8-4d49-9095-bb628827692a" ascendingOrDescending="UNSPECIFIED" column-ref="COL345" name="nom_espece_culture" physicalName="nom_espece_culture" />
      <index-column id="IDC355" populated="true" UUID="2895ddef-1d11-4e30-b2c9-fb6ad3ab03b4" ascendingOrDescending="UNSPECIFIED" column-ref="COL346" name="nom_produit" physicalName="nom_produit" />
     </index>
    </folder>
@@ -1321,7 +1321,7 @@ perte transport</remarks>
   <table id="TAB356" populated="true" UUID="58e620d2-eec9-4387-8170-74847addebd3" name="plantation_culture" objectType="TABLE" physicalName="plantation_culture" >
    <remarks></remarks>
    <folder id="FOLTAB3561" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL357" populated="true" UUID="c0823a74-7508-415e-b062-d64687d8033d" autoIncrement="false" autoIncrementSequenceName="culture_code_culture_seq_1" defaultValue="" name="nom_espece" nullable="0" physicalName="nom_espece" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL357" populated="true" UUID="c0823a74-7508-415e-b062-d64687d8033d" autoIncrement="false" autoIncrementSequenceName="culture_code_culture_seq_1_1" defaultValue="" name="nom_espece_culture" nullable="0" physicalName="nom_espece_culture" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>inclure jachère</remarks>
     </column>
     <column id="COL358" populated="true" UUID="653a2d59-a384-4c72-8d92-fa23e5de9c60" autoIncrement="false" autoIncrementSequenceName="exploitation_code_exp_seq_11" defaultValue="" name="code_exp" nullable="0" physicalName="code_exp" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -1355,7 +1355,7 @@ perte transport</remarks>
     </folder>
     <folder id="FOLTAB3564" populated="true" name="Indices" physicalName="Indices" type="4">
     <index id="IDX366" populated="true" UUID="cdc563fd-3cb1-4c7c-8c31-487590854848" clustered="false" name="code_plantation_culture" physicalName="code_plantation_culture" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC367" populated="true" UUID="0729be48-f9ed-457b-a6fd-0fff7b80bff1" ascendingOrDescending="UNSPECIFIED" column-ref="COL357" name="nom_espece" physicalName="nom_espece" />
+     <index-column id="IDC367" populated="true" UUID="0729be48-f9ed-457b-a6fd-0fff7b80bff1" ascendingOrDescending="UNSPECIFIED" column-ref="COL357" name="nom_espece_culture" physicalName="nom_espece_culture" />
      <index-column id="IDC368" populated="true" UUID="be50a94e-c531-4da5-94b2-157c9b47d565" ascendingOrDescending="UNSPECIFIED" column-ref="COL358" name="code_exp" physicalName="code_exp" />
      <index-column id="IDC369" populated="true" UUID="3cab937c-6789-4618-9086-0c109379fd3e" ascendingOrDescending="UNSPECIFIED" column-ref="COL359" name="code_cycle_cultural" physicalName="code_cycle_cultural" />
     </index>
