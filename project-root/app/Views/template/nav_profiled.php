@@ -5,10 +5,8 @@ $navs=[];
 $navs["Data"] = "/OA-OI_git/project-root/public/Data";
 
 if ($_SESSION['user_profile'] == null) {
-    $navs = [
-        "Créer mon compte" => "/OA-OI_git/project-root/public/Register",
-        "Connexion" => "/OA-OI_git/project-root/public/Home"
-    ];
+    $navs["Créer mon compte"]="/OA-OI_git/project-root/public/Register";
+    $navs["Connexion"]="/OA-OI_git/project-root/public/Home";
 } else {
 
     if (strpos($_SESSION['user_profile'] ,'producteur')!==false) {
