@@ -2157,21 +2157,21 @@ budget float[7]</remarks>
     <column-mapping id="CMP646" populated="true" UUID="f3ee1ffc-e83d-4be5-8ecc-9db5d580d195" fk-column-ref="COL424" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL129" />
     <column-mapping id="CMP647" populated="true" UUID="9e9a2a87-d864-481e-9837-106747eedf83" fk-column-ref="COL425" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL130" />
    </relationship>
-   <relationship id="REL648" populated="true" UUID="ea3bd44c-fb6c-403c-acd3-f4dc74b3db26" deferrability="7" deleteRule="3" fk-table-ref="TAB431" fkCardinality="7" identifying="true" name="animal_suivi_animal_fk" physicalName="animal_suivi_animal_fk" pk-table-ref="TAB128" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP649" populated="true" UUID="8e8c26f1-b9f8-4469-9e4f-64c918954e60" fk-column-ref="COL432" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL129" />
-    <column-mapping id="CMP650" populated="true" UUID="86289c41-4a1b-48c9-a032-9ed0ec31a8f8" fk-column-ref="COL433" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL130" />
+   <relationship id="REL648" populated="true" UUID="e3fd7f56-cd8f-47b9-ae7c-0cd661390951" deferrability="7" deleteRule="3" fk-table-ref="TAB473" fkCardinality="7" identifying="true" name="animal_participe_activite_animal_fk" physicalName="animal_participe_activite_animal_fk" pk-table-ref="TAB128" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP649" populated="true" UUID="b1c2a70f-8cd6-4c8f-b0e8-04b1eaea306b" fk-column-ref="COL474" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL129" />
+    <column-mapping id="CMP650" populated="true" UUID="8ce55742-ffa1-4022-9bb4-65bd716d2f01" fk-column-ref="COL475" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL130" />
    </relationship>
-   <relationship id="REL651" populated="true" UUID="2ef41044-bc4a-45af-8a9a-8a41145246e0" deferrability="7" deleteRule="3" fk-table-ref="TAB443" fkCardinality="7" identifying="true" name="animal_tache_animal_fk" physicalName="animal_tache_animal_fk" pk-table-ref="TAB128" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP652" populated="true" UUID="01da1c19-65f1-4ab2-bde5-72ae1d7832ee" fk-column-ref="COL444" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL129" />
-    <column-mapping id="CMP653" populated="true" UUID="17a4a6ba-7f19-4d1e-a101-e8ae2907aa6e" fk-column-ref="COL445" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL130" />
+   <relationship id="REL651" populated="true" UUID="8d0f4862-e055-4b2b-b57d-4624503e3f9b" deferrability="7" deleteRule="3" fk-table-ref="TAB509" fkCardinality="7" identifying="true" name="animal_production_produit_animal_fk" physicalName="animal_production_produit_animal_fk" pk-table-ref="TAB128" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP652" populated="true" UUID="b43aaa27-c1cf-4b55-9911-d4674205b6dc" fk-column-ref="COL510" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL129" />
+    <column-mapping id="CMP653" populated="true" UUID="c0d7cb81-2a9f-4f82-82a2-bb5031bf1c89" fk-column-ref="COL511" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL130" />
    </relationship>
-   <relationship id="REL654" populated="true" UUID="e3fd7f56-cd8f-47b9-ae7c-0cd661390951" deferrability="7" deleteRule="3" fk-table-ref="TAB473" fkCardinality="7" identifying="true" name="animal_participe_activite_animal_fk" physicalName="animal_participe_activite_animal_fk" pk-table-ref="TAB128" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP655" populated="true" UUID="b1c2a70f-8cd6-4c8f-b0e8-04b1eaea306b" fk-column-ref="COL474" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL129" />
-    <column-mapping id="CMP656" populated="true" UUID="8ce55742-ffa1-4022-9bb4-65bd716d2f01" fk-column-ref="COL475" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL130" />
+   <relationship id="REL654" populated="true" UUID="2ef41044-bc4a-45af-8a9a-8a41145246e0" deferrability="7" deleteRule="3" fk-table-ref="TAB443" fkCardinality="7" identifying="true" name="animal_tache_animal_fk" physicalName="animal_tache_animal_fk" pk-table-ref="TAB128" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP655" populated="true" UUID="01da1c19-65f1-4ab2-bde5-72ae1d7832ee" fk-column-ref="COL444" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL129" />
+    <column-mapping id="CMP656" populated="true" UUID="17a4a6ba-7f19-4d1e-a101-e8ae2907aa6e" fk-column-ref="COL445" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL130" />
    </relationship>
-   <relationship id="REL657" populated="true" UUID="8d0f4862-e055-4b2b-b57d-4624503e3f9b" deferrability="7" deleteRule="3" fk-table-ref="TAB509" fkCardinality="7" identifying="true" name="animal_production_produit_animal_fk" physicalName="animal_production_produit_animal_fk" pk-table-ref="TAB128" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP658" populated="true" UUID="b43aaa27-c1cf-4b55-9911-d4674205b6dc" fk-column-ref="COL510" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL129" />
-    <column-mapping id="CMP659" populated="true" UUID="c0d7cb81-2a9f-4f82-82a2-bb5031bf1c89" fk-column-ref="COL511" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL130" />
+   <relationship id="REL657" populated="true" UUID="ea3bd44c-fb6c-403c-acd3-f4dc74b3db26" deferrability="7" deleteRule="3" fk-table-ref="TAB431" fkCardinality="7" identifying="true" name="animal_suivi_animal_fk" physicalName="animal_suivi_animal_fk" pk-table-ref="TAB128" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP658" populated="true" UUID="8e8c26f1-b9f8-4469-9e4f-64c918954e60" fk-column-ref="COL432" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL129" />
+    <column-mapping id="CMP659" populated="true" UUID="86289c41-4a1b-48c9-a032-9ed0ec31a8f8" fk-column-ref="COL433" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL130" />
    </relationship>
    <relationship id="REL660" populated="true" UUID="a36fee4a-0099-4009-9f96-e6783f8494f4" deferrability="7" deleteRule="3" fk-table-ref="TAB190" fkCardinality="7" identifying="true" name="organisation_participation_fk" physicalName="organisation_participation_fk" pk-table-ref="TAB184" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP661" populated="true" UUID="5addbcac-425e-4d3d-ad5d-f3dcaed5adc0" fk-column-ref="COL191" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL185" />
@@ -2278,7 +2278,7 @@ budget float[7]</remarks>
  <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="1.0" viewportX="1113" viewportY="1722" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="1.0" viewportX="5783" viewportY="1167" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB9" x="4113" y="2418" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB23" x="2497" y="1937" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB31" x="3254" y="3657" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
@@ -2376,13 +2376,13 @@ budget float[7]</remarks>
   <table-link relationship-ref="REL642" pkConnection="0.941747572815534" fkConnection="0.2" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL645" pkConnection="0.887240356083086" fkConnection="0.49295774647887325" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL711" pkConnection="0.6197183098591549" fkConnection="0.38028169014084506" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
-  <table-link relationship-ref="REL648" pkConnection="0.8307692307692308" fkConnection="0.2222222222222222" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL651" pkConnection="0.04923076923076923" fkConnection="0.9276595744680851" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL657" pkConnection="0.8307692307692308" fkConnection="0.2222222222222222" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL654" pkConnection="0.04923076923076923" fkConnection="0.9276595744680851" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
   <table-link relationship-ref="REL578" pkConnection="0.467680608365019" fkConnection="0.5040322580645161" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL717" pkConnection="0.5062240663900415" fkConnection="0.47580645161290325" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
   <table-link relationship-ref="REL707" pkConnection="0.49122807017543857" fkConnection="0.38028169014084506" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL709" pkConnection="0.49122807017543857" fkConnection="0.5352112676056338" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
-  <table-link relationship-ref="REL654" pkConnection="0.6350148367952523" fkConnection="0.49295774647887325" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL648" pkConnection="0.6350148367952523" fkConnection="0.49295774647887325" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL612" pkConnection="0.03398058252427184" fkConnection="0.3244444444444444" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL614" pkConnection="0.4409090909090909" fkConnection="0.6273764258555133" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL616" pkConnection="0.2978723404255319" fkConnection="0.6283185840707964" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
@@ -2392,7 +2392,7 @@ budget float[7]</remarks>
   <table-link relationship-ref="REL696" pkConnection="0.5103448275862069" fkConnection="0.4896551724137931" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL582" pkConnection="0.28994082840236685" fkConnection="0.11764705882352941" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL584" pkConnection="0.893491124260355" fkConnection="0.4" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL657" pkConnection="0.008902077151335312" fkConnection="1.0" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL651" pkConnection="0.008902077151335312" fkConnection="1.0" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL719" pkConnection="0.49411764705882355" fkConnection="0.6220472440944882" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL723" pkConnection="0.26666666666666666" fkConnection="0.7370689655172413" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL727" pkConnection="0.2681818181818182" fkConnection="0.7370689655172413" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>

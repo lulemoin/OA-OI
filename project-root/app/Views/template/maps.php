@@ -8,5 +8,6 @@
             crossorigin=""></script>
     <script src="/OA-OI_git/project-root/zone.js"></script>
     <link rel="stylesheet" href=".\style.css" type="text/css">
+    <script src="https://d3js.org/d3.v5.js"></script>
 
 <?php endif; ?>

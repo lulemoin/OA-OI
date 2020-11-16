@@ -14,6 +14,12 @@
 </div>
 
 
+<div id="performance">
+
+    <?php echo $moy_perf; ?>
+
+</div>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template/template.php'); ?>

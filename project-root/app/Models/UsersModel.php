@@ -123,6 +123,12 @@ class UsersModel extends Model
     {
         return true;
     }
+
+    public function getPerfs()
+    {
+        $perfs=$this->findColumn('performance');
+        return $perfs;
+    }
 }
 
 
