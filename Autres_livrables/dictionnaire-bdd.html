@@ -1,0 +1,2246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+<style>
+      .table {
+        background-color:#F5F5FF;
+        border-left:4px solid gray;
+        border-bottom:4px solid gray;
+        border-top:4px solid gray;
+        border-right:4px solid gray;
+        margin-bottom:3em;
+        margin-left:2em;
+        margin-right:2em;
+        padding:1em;
+      }
+      .tableNameHeading h1 {
+          display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:125%;
+        font-weight:bold;
+      }
+        
+      .tableNameHeading h2 {
+        display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:115%;
+        font-weight:normal;
+      }
+      
+      .tableComment { 
+        background-color:#e4efff; margin-bottom:20px;
+      }
+      
+      .tableDefinition { 
+        padding:2px;
+        border-collapse:collapse;
+        margin-top:1em;
+      }
+
+      .tdTableDefinition {
+        padding-right:10px;
+        vertical-align:top;
+        border-top:1px solid #C0C0C0;
+      }
+
+      .tdLogicalColName {
+        width:20em;
+      }
+      
+      .tdPhysicalColName {
+        width:20em;
+      }
+      
+      .tdDataType {
+        width:10em;
+      }
+
+      .tdPkFlag {
+        width:4em;
+      }
+
+      .tdNullFlag {
+        width:9em;
+      }
+
+      .tdTableHeading {
+        padding:2px;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+        vertical-align:top;
+        border-bottom: 1px solid #C0C0C0;
+        background-color: rgb(240,240,240);
+      }
+      
+      .subTitle {
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      .references {
+      }
+      .comment {
+        color:#666666;
+        margin-left:3em;
+        padding:0.25em;
+      }
+    </style>
+<title>bdd.adele</title>
+</head>
+<body>
+<center>
+<h2>bdd.adele</h2>
+</center>
+<h3>List of tables</h3>
+<ul>
+<li>
+<a href="#amenagement">amenagement</a>
+</li>
+<li>
+<a href="#animal">animal</a>
+</li>
+<li>
+<a href="#apport_financier">apport_financier</a>
+</li>
+<li>
+<a href="#auteur_etude">auteur_etude</a>
+</li>
+<li>
+<a href="#autre_activite_personne">autre_activite_personne</a>
+</li>
+<li>
+<a href="#chef_projet">chef_projet</a>
+</li>
+<li>
+<a href="#conso_intermediaire">conso_intermediaire</a>
+</li>
+<li>
+<a href="#cycle_cultural">cycle_cultural</a>
+</li>
+<li>
+<a href="#debouche_produit">debouche_produit</a>
+</li>
+<li>
+<a href="#emigration">emigration</a>
+</li>
+<li>
+<a href="#emprunt">emprunt</a>
+</li>
+<li>
+<a href="#en_menage">en_menage</a>
+</li>
+<li>
+<a href="#entraide">entraide</a>
+</li>
+<li>
+<a href="#etude">etude</a>
+</li>
+<li>
+<a href="#exploitation">exploitation</a>
+</li>
+<li>
+<a href="#individu">individu</a>
+</li>
+<li>
+<a href="#infrastructure">infrastructure</a>
+</li>
+<li>
+<a href="#main-oeuvre">main-oeuvre</a>
+</li>
+<li>
+<a href="#materiel">materiel</a>
+</li>
+<li>
+<a href="#menage">menage</a>
+</li>
+<li>
+<a href="#organisation">organisation</a>
+</li>
+<li>
+<a href="#parcelle">parcelle</a>
+</li>
+<li>
+<a href="#participation">participation</a>
+</li>
+<li>
+<a href="#participe_autre_activite">participe_autre_activite</a>
+</li>
+<li>
+<a href="#participe_projet">participe_projet</a>
+</li>
+<li>
+<a href="#plantation_culture">plantation_culture</a>
+</li>
+<li>
+<a href="#plantation_plante_perenne">plantation_plante_perenne</a>
+</li>
+<li>
+<a href="#production">production</a>
+</li>
+<li>
+<a href="#projet">projet</a>
+</li>
+<li>
+<a href="#semence">semence</a>
+</li>
+<li>
+<a href="#service_domestique">service_domestique</a>
+</li>
+<li>
+<a href="#stock">stock</a>
+</li>
+<li>
+<a href="#terre">terre</a>
+</li>
+<li>
+<a href="#utilisateur">utilisateur</a>
+</li>
+<li>
+<a href="#utilisation_fertilisant">utilisation_fertilisant</a>
+</li>
+<li>
+<a href="#utilisation_fertilisant_exp">utilisation_fertilisant_exp</a>
+</li>
+<li>
+<a href="#utilisation_phyto">utilisation_phyto</a>
+</li>
+<li>
+<a href="#vente_produit">vente_produit</a>
+</li>
+</ul>
+<div class="tableNameHeading">
+<h1>amenagement<a name="amenagement"></a>
+</h1>
+<h2>
+      (Physical Name: amenagement)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_amenagement (PK)</td><td class="tdTableDefinition">code_amenagement</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nom_amenagement</td><td class="tdTableDefinition">nom_amenagement</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Terrasses<br>Am&eacute;nagements pour l'irrigation gravitaire<br>Digues<br>Cordons pierreux<br>Reforestation<br>Brise-vents<br>Bandes de v&eacute;g&eacute;tation<br>Autre</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>animal<a name="animal"></a>
+</h1>
+<h2>
+      (Physical Name: animal)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_animal (PK)</td><td class="tdTableDefinition">code_animal</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nb_tete</td><td class="tdTableDefinition">nb_tete</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nombre_femelle</td><td class="tdTableDefinition">nombre_femelle</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">famile_animal</td><td class="tdTableDefinition">famile_animal</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">bovin<br>buffles<br>ovins<br>caprins<br>porcins<br>volailles<br>lapins<br>autre<br>ruches<br>bovins_trait<br>equin_trait<br>ane_trait<br>buffle_trait<br>poissons</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">mode_possession</td><td class="tdTableDefinition">mode_possession</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">propri&eacute;taire<br>location<br>co-location<br>co-propri&eacute;taire<br>confier</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">valeur_animal</td><td class="tdTableDefinition">valeur_animal</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>apport_financier<a name="apport_financier"></a>
+</h1>
+<h2>
+      (Physical Name: apport_financier)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_aide_financiere (PK)</td><td class="tdTableDefinition">code_aide_financiere</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">montant_aide</td><td class="tdTableDefinition">montant_aide</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">origine</td><td class="tdTableDefinition">origine</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Subvention &agrave; la production/intrants/acc&egrave;s gratuit &agrave; des moyens de production<br>Transfert priv&eacute; issu de la migration<br>Protection sociale ; pension, travaux publics, invalidit&eacute;, bourse enfants, transferts fonds conditionnels ou non</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>auteur_etude<a name="auteur_etude"></a>
+</h1>
+<h2>
+      (Physical Name: auteur_etude)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_etude (PK)
+                &nbsp;(<a href="#etude">FK</a>)
+              </td><td class="tdTableDefinition">code_etude</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">login (PK)
+                &nbsp;(<a href="#utilisateur">FK</a>)
+              </td><td class="tdTableDefinition">login</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#utilisateur">utilisateur</a> through (login)</li>
+<li>
+<a href="#etude">etude</a> through (code_etude)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>autre_activite_personne<a name="autre_activite_personne"></a>
+</h1>
+<h2>
+      (Physical Name: autre_activite_personne)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_autre_activite (PK)</td><td class="tdTableDefinition">code_autre_activite</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">agricole</td><td class="tdTableDefinition">agricole</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">entrepreneuriale/salariale?</td><td class="tdTableDefinition">entrepreneurialesalariale</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">on_farm</td><td class="tdTableDefinition">on_farm</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">conso_intermediaire_autre_activite</td><td class="tdTableDefinition">conso_intermediaire_autre_activite</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nom_autre_activite</td><td class="tdTableDefinition">nom_autre_activite</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">liste<br>pr&eacute;l&egrave;vement ressource naturelle non renouvelable</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">produit_brut_autre_activite</td><td class="tdTableDefinition">produit_brut_autre_activite</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">temps_travail_autre_activite</td><td class="tdTableDefinition">_</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#participe_autre_activite">participe_autre_activite</a> referencing (code_autre_activite)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>chef_projet<a name="chef_projet"></a>
+</h1>
+<h2>
+      (Physical Name: chef_projet)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_projet (PK)
+                &nbsp;(<a href="#projet">FK</a>)
+              </td><td class="tdTableDefinition">code_projet</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">login (PK)
+                &nbsp;(<a href="#utilisateur">FK</a>)
+              </td><td class="tdTableDefinition">login</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#projet">projet</a> through (code_projet)</li>
+<li>
+<a href="#utilisateur">utilisateur</a> through (login)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>conso_intermediaire<a name="conso_intermediaire"></a>
+</h1>
+<h2>
+      (Physical Name: conso_intermediaire)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_ci (PK)</td><td class="tdTableDefinition">code_ci</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_conso</td><td class="tdTableDefinition">type_conso</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">irrigation<br>gazoil<br>phyto<br>semence<br>fertilisant<br>transformation<br>alimentation elevage<br>soins v&eacute;t&eacute;rinaire<br>renouvellement du troupeau<br>prestations de service<br>fraispour l'activit&eacute;<br>frais gestion ravageur<br>autre</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_conso_inter_produit</td><td class="tdTableDefinition">cutlureelevageautre</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nom_produit_conso_inter</td><td class="tdTableDefinition">nom_produit_conso_inter</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">prix_ci</td><td class="tdTableDefinition">prix_ci</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">quantite_ci</td><td class="tdTableDefinition">quantite_ci</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">unite_ci</td><td class="tdTableDefinition">unite_ci</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#utilisation_fertilisant_exp">utilisation_fertilisant_exp</a> referencing (code_exp, code_ci, annee_observation)</li>
+<li>
+<a href="#semence">semence</a> referencing (code_ci, code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>cycle_cultural<a name="cycle_cultural"></a>
+</h1>
+<h2>
+      (Physical Name: cycle_cultural)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_cycle_cultural (PK)</td><td class="tdTableDefinition">code_cycle_cultural</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#parcelle">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#parcelle">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_parcelle (PK)
+                &nbsp;(<a href="#parcelle">FK</a>)
+              </td><td class="tdTableDefinition">code_parcelle</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_terre (PK)
+                &nbsp;(<a href="#parcelle">FK</a>)
+              </td><td class="tdTableDefinition">code_terre</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">saison_cycle_cultural (PK)</td><td class="tdTableDefinition">saison_cycle_cultural</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">saison<br>contre_saison</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#parcelle">parcelle</a> through (code_parcelle, code_terre, code_exp, annee_observation)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#utilisation_fertilisant">utilisation_fertilisant</a> referencing (code_cycle_cultural, code_parcelle, code_terre, code_exp, annee_observation, saison_cycle_cultural)</li>
+<li>
+<a href="#plantation_culture">plantation_culture</a> referencing (code_cycle_cultural, code_parcelle, code_terre, code_exp, annee_observation, saison_cycle_cultural)</li>
+<li>
+<a href="#utilisation_phyto">utilisation_phyto</a> referencing (code_cycle_cultural, code_parcelle, code_terre, code_exp, annee_observation, saison_cycle_cultural)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>debouche_produit<a name="debouche_produit"></a>
+</h1>
+<h2>
+      (Physical Name: debouche_produit)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#production">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#production">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_production (PK)
+                &nbsp;(<a href="#production">FK</a>)
+              </td><td class="tdTableDefinition">code_production</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_beneficiaire_produit</td><td class="tdTableDefinition">type_beneficiaire_produit</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">famille<br>commercialisation<br>animaux<br>mat&eacute;riel de construction<br>travailleur ext<br>cadeau<br>conservation pour ann&eacute;e suivante<br>perte stockage<br>perte transport<br>transformation</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">quantite_beneficie_prod</td><td class="tdTableDefinition">quantite_beneficie_prod</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#production">production</a> through (code_exp, annee_observation, code_production)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#vente_produit">vente_produit</a> referencing (code_exp, annee_observation, code_production)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>emigration<a name="emigration"></a>
+</h1>
+<h2>
+      (Physical Name: emigration)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_individu (PK)
+                &nbsp;(<a href="#individu">FK</a>)
+              </td><td class="tdTableDefinition">id_individu</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">raison_emigration</td><td class="tdTableDefinition">raison_emigration</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">destination_emigration</td><td class="tdTableDefinition">destination_emigration</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#individu">individu</a> through (id_individu)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>emprunt<a name="emprunt"></a>
+</h1>
+<h2>
+      (Physical Name: emprunt)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_emprunt (PK)</td><td class="tdTableDefinition">code_emprunt</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">taux_interet</td><td class="tdTableDefinition">taux_interet</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">montant_emprunt</td><td class="tdTableDefinition">montant_emprunt</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_emprunt</td><td class="tdTableDefinition">type_emprunt</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">pr&ecirc;t<br>cr&eacute;dit</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">duree_emprunt</td><td class="tdTableDefinition">duree_emprunt</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">reste_a_rembourser</td><td class="tdTableDefinition">reste_a_rembourser</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">source_emprunt</td><td class="tdTableDefinition">source_emprunt</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Banque commerciale<br>Banque agricole de developpement<br>Soci&eacute;t&eacute; coop&eacute;rative de  cr&eacute;dit<br>Pr&ecirc;teur<br>Fournisseur d'intrants<br>Groupe d'entraide<br>Famille ou amis<br>Organisations paysannes<br>Gouvernement<br>Autre</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_debut_emprunt</td><td class="tdTableDefinition">annee_debut_emprunt</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">garantie_emprunt</td><td class="tdTableDefinition">garantie_emprunt</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">terres exploitant<br>autres avoirs<br>autre type de garantie</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>en_menage<a name="en_menage"></a>
+</h1>
+<h2>
+      (Physical Name: en_menage)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_menage (PK)
+                &nbsp;(<a href="#menage">FK</a>)
+              </td><td class="tdTableDefinition">code_menage</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_individu (PK)
+                &nbsp;(<a href="#individu">FK</a>)
+              </td><td class="tdTableDefinition">id_individu</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+<li>
+<a href="#individu">individu</a> through (id_individu)</li>
+<li>
+<a href="#menage">menage</a> through (code_menage)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>entraide<a name="entraide"></a>
+</h1>
+<h2>
+      (Physical Name: entraide)
+      </h2>
+<p class="comment">si on ne connait pas l'aid&eacute; on aura besoin de mettre une cl&eacute; code_aide ou alors juste un champ temps consacr&eacute; &agrave; l'entraide dans individu</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_aideur (PK)
+                &nbsp;(<a href="#individu">FK</a>)
+              </td><td class="tdTableDefinition">id_aideur</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_aide
+                &nbsp;(<a href="#individu">FK</a>)
+              </td><td class="tdTableDefinition">id_aide</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">duree_entraide_an</td><td class="tdTableDefinition">duree_entraide_an</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">en jours par an<br>
+<br>Modalit&eacute; de la transaction ??</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">egalitaire</td><td class="tdTableDefinition">egalitaire</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">entraide_indispensable</td><td class="tdTableDefinition">entraide_indispensable</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#individu">individu</a> through (id_aideur)</li>
+<li>
+<a href="#individu">individu</a> through (id_aide)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>etude<a name="etude"></a>
+</h1>
+<h2>
+      (Physical Name: etude)
+      </h2>
+<p class="comment">si profil = chercheur</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_etude (PK)</td><td class="tdTableDefinition">code_etude</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">fichier_contenu</td><td class="tdTableDefinition">fichier_contenu</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">date_etude</td><td class="tdTableDefinition">date_etude</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#auteur_etude">auteur_etude</a> referencing (code_etude)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>exploitation<a name="exploitation"></a>
+</h1>
+<h2>
+      (Physical Name: exploitation)
+      </h2>
+<p class="comment">Un paysan sans terre aura une exploitation de taille 0 et n'aura pas toutes les valeurs &agrave; renseigner.<br>
+<br>
+</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)</td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)</td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_chef_exploitation
+                &nbsp;(<a href="#individu">FK</a>)
+              </td><td class="tdTableDefinition">id_chef_exploitation</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">superficie_tot</td><td class="tdTableDefinition">superficie_tot</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">localisation_exploitation</td><td class="tdTableDefinition">localisation_exploitation</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">montant_epargne_monetaire</td><td class="tdTableDefinition">montant_epargne_monetaire</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">emission_gaes</td><td class="tdTableDefinition">emission_gaes</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">consommation_eau</td><td class="tdTableDefinition">consommation_eau</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">consommation_energie_fossile</td><td class="tdTableDefinition">consommation_energie_fossile</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">revenu_monetaire_agricole</td><td class="tdTableDefinition">revenu_monetaire_agricole</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#individu">individu</a> through (id_chef_exploitation)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#main-oeuvre">main-oeuvre</a> referencing (code_exp, annee_observation)</li>
+<li>
+<a href="#en_menage">en_menage</a> referencing (code_exp, annee_observation)</li>
+<li>
+<a href="#terre">terre</a> referencing (code_exp, annee_observation)</li>
+<li>
+<a href="#emprunt">emprunt</a> referencing (code_exp, annee_observation)</li>
+<li>
+<a href="#apport_financier">apport_financier</a> referencing (code_exp, annee_observation)</li>
+<li>
+<a href="#service_domestique">service_domestique</a> referencing (code_exp, annee_observation)</li>
+<li>
+<a href="#amenagement">amenagement</a> referencing (code_exp, annee_observation)</li>
+<li>
+<a href="#infrastructure">infrastructure</a> referencing (code_exp, annee_observation)</li>
+<li>
+<a href="#conso_intermediaire">conso_intermediaire</a> referencing (code_exp, annee_observation)</li>
+<li>
+<a href="#animal">animal</a> referencing (code_exp, annee_observation)</li>
+<li>
+<a href="#materiel">materiel</a> referencing (code_exp, annee_observation)</li>
+<li>
+<a href="#production">production</a> referencing (code_exp, annee_observation)</li>
+<li>
+<a href="#stock">stock</a> referencing (code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>individu<a name="individu"></a>
+</h1>
+<h2>
+      (Physical Name: individu)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_individu (PK)</td><td class="tdTableDefinition">id_individu</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nom</td><td class="tdTableDefinition">nom</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">prenom</td><td class="tdTableDefinition">prenom</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">sexe</td><td class="tdTableDefinition">sexe</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">scolarise</td><td class="tdTableDefinition">scolarise</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">niveau_scolarisation</td><td class="tdTableDefinition">niveau_scolarisation</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">primaire<br>secondaire<br>autre</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">apprentissage_pro</td><td class="tdTableDefinition">apprentissage_pro</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">1-Informelle<br>2-Non formel ??<br>3-Superieur<br>4-Secondaire<br>5-Autre</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">date_naissance</td><td class="tdTableDefinition">date_naissance</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">alphabetise</td><td class="tdTableDefinition">alphabetise</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#main-oeuvre">main-oeuvre</a> referencing (id_individu)</li>
+<li>
+<a href="#en_menage">en_menage</a> referencing (id_individu)</li>
+<li>
+<a href="#participation">participation</a> referencing (id_individu)</li>
+<li>
+<a href="#entraide">entraide</a> referencing (id_individu)</li>
+<li>
+<a href="#entraide">entraide</a> referencing (id_individu)</li>
+<li>
+<a href="#emigration">emigration</a> referencing (id_individu)</li>
+<li>
+<a href="#exploitation">exploitation</a> referencing (id_individu)</li>
+<li>
+<a href="#utilisateur">utilisateur</a> referencing (id_individu)</li>
+<li>
+<a href="#participe_autre_activite">participe_autre_activite</a> referencing (id_individu)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>infrastructure<a name="infrastructure"></a>
+</h1>
+<h2>
+      (Physical Name: infrasctructure)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_infra (PK)</td><td class="tdTableDefinition">code_infra</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_infra</td><td class="tdTableDefinition">type_infra</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_jouissance</td><td class="tdTableDefinition">type_jouissance</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">gratuit&eacute; par aide &eacute;tat &agrave; ne pas oublier</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">capacite_infra</td><td class="tdTableDefinition">capacite_infra</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nom_infra</td><td class="tdTableDefinition">nom_infra</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Etable<br>Salle de traite<br>Bergerie<br>B&acirc;timent de naissage<br>B&acirc;timent d'engraissement<br>infrastructure pour &eacute;levage de cycle court (volaille, lapins,...)<br>Surface avec serre <br>Infrastructure stockage et conservation des produits phyto<br>B&acirc;timents pour transformation/conservation (ex : fromagerie)<br>Atelier de transformation des produits agricoles (b&acirc;timent en compl&eacute;ment de l'&eacute;quipement)<br>batiment stockage fourrage<br>batiment</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nb_infra_exp</td><td class="tdTableDefinition">nb_infra_exp</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">surface_infra</td><td class="tdTableDefinition">surface_infra</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">augmente_productivite</td><td class="tdTableDefinition">augmente_productivite</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>main-oeuvre<a name="main-oeuvre"></a>
+</h1>
+<h2>
+      (Physical Name: main_oeuvre)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_travailleur (PK)
+                &nbsp;(<a href="#individu">FK</a>)
+              </td><td class="tdTableDefinition">id_travailleur</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">tps_travail_an</td><td class="tdTableDefinition">tps_travail_an</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">tps_travail_saison</td><td class="tdTableDefinition">tps_travail_saison</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">activite_mo</td><td class="tdTableDefinition">activite_mo</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">culture<br>elevage<br>activite forestiere<br>transformation produit<br>commercialisation</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">qualifie</td><td class="tdTableDefinition">qualifie</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">charge_sociale</td><td class="tdTableDefinition">charge_sociale</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">salaire</td><td class="tdTableDefinition">salaire</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">0 = famille ou aide</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+<li>
+<a href="#individu">individu</a> through (id_travailleur)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>materiel<a name="materiel"></a>
+</h1>
+<h2>
+      (Physical Name: materiel)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_materiel (PK)</td><td class="tdTableDefinition">code_materiel</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_materiel</td><td class="tdTableDefinition">type_materiel</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">1 : materiel manuel<br>2 : equipement de traction animale <br>3 : machine motoris&eacute;e<br>4 : equipement de transformation des produis agricoles<br>5 : equipement domestique</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nom_materiel</td><td class="tdTableDefinition">nom_materiel</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nb_mat_exp</td><td class="tdTableDefinition">nb_mat_exp</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_acces</td><td class="tdTableDefinition">type_acces</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">locataire<br>co-locataire<br>propri&eacute;taire<br>co-propri&eacute;taire<br>
+<br>gratuit&eacute; par aide &eacute;tat</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">capacite_materiel</td><td class="tdTableDefinition">capacite_materiel</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">valeur_materiel</td><td class="tdTableDefinition">valeur_materiel</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">puissance_materiel</td><td class="tdTableDefinition">puissance_materiel</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>menage<a name="menage"></a>
+</h1>
+<h2>
+      (Physical Name: menage)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_menage (PK)</td><td class="tdTableDefinition">code_menage</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">eau_potable_courante</td><td class="tdTableDefinition">eau_potable_courante</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">eau-potable_toute_annee</td><td class="tdTableDefinition">eaupotable_toute_annee</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nom_menage</td><td class="tdTableDefinition">nom_menage</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Unique</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#en_menage">en_menage</a> referencing (code_menage)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>organisation<a name="organisation"></a>
+</h1>
+<h2>
+      (Physical Name: organisation)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_org (PK)</td><td class="tdTableDefinition">code_org</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">org_type</td><td class="tdTableDefinition">org_type</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">1-coop&eacute;rative<br>2-Association interprofessionnelle<br>3-Organisation de producteurs<br>4-Groupement d'int&eacute;r&ecirc;t &eacute;conomique et environnemental<br>5-Autre<br>
+<br>ou si non agricole :<br>
+<br>sport<br>religieux<br>politique<br>autre</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">agricole</td><td class="tdTableDefinition">agricole</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#participation">participation</a> referencing (code_org)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>parcelle<a name="parcelle"></a>
+</h1>
+<h2>
+      (Physical Name: parcelle)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#terre">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#terre">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_parcelle (PK)</td><td class="tdTableDefinition">code_parcelle</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_terre (PK)
+                &nbsp;(<a href="#terre">FK</a>)
+              </td><td class="tdTableDefinition">code_terre</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">fertilisation_par_culture_intercalaire</td><td class="tdTableDefinition">fertilisation_par_culture_intercalaire</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">fertilisation_par_animaux</td><td class="tdTableDefinition">fertilisation_par_animaux</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">superficie_parcelle</td><td class="tdTableDefinition">superficie_parcelle</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">m&sup2;</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#terre">terre</a> through (code_terre, code_exp, annee_observation)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#cycle_cultural">cycle_cultural</a> referencing (code_parcelle, code_terre, code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>participation<a name="participation"></a>
+</h1>
+<h2>
+      (Physical Name: participation)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_org (PK)
+                &nbsp;(<a href="#organisation">FK</a>)
+              </td><td class="tdTableDefinition">code_org</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_indivdu_org (PK)
+                &nbsp;(<a href="#individu">FK</a>)
+              </td><td class="tdTableDefinition">id_indivdu_org</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_part</td><td class="tdTableDefinition">type_part</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Prise de responsabilit&eacute; dans l'organisation.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#individu">individu</a> through (id_indivdu_org)</li>
+<li>
+<a href="#organisation">organisation</a> through (code_org)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>participe_autre_activite<a name="participe_autre_activite"></a>
+</h1>
+<h2>
+      (Physical Name: participe_autre_activite)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_individu (PK)
+                &nbsp;(<a href="#individu">FK</a>)
+              </td><td class="tdTableDefinition">id_individu</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_autre_activite (PK)
+                &nbsp;(<a href="#autre_activite_personne">FK</a>)
+              </td><td class="tdTableDefinition">code_autre_activite</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#individu">individu</a> through (id_individu)</li>
+<li>
+<a href="#autre_activite_personne">autre_activite_personne</a> through (code_autre_activite)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>participe_projet<a name="participe_projet"></a>
+</h1>
+<h2>
+      (Physical Name: participe_projet)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_projet (PK)
+                &nbsp;(<a href="#projet">FK</a>)
+              </td><td class="tdTableDefinition">code_projet</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">login (PK)
+                &nbsp;(<a href="#utilisateur">FK</a>)
+              </td><td class="tdTableDefinition">login</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#projet">projet</a> through (code_projet)</li>
+<li>
+<a href="#utilisateur">utilisateur</a> through (login)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>plantation_culture<a name="plantation_culture"></a>
+</h1>
+<h2>
+      (Physical Name: plantation_culture)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nom_espece_culture (PK)</td><td class="tdTableDefinition">nom_espece_culture</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">inclure jach&egrave;re et fourrage</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_cycle_cultural (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">code_cycle_cultural</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_parcelle (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">code_parcelle</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_terre (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">code_terre</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">saison_cycle_cultural (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">saison_cycle_cultural</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">saison<br>contre_saison</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">proportion_espece</td><td class="tdTableDefinition">proportion_espece</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">100% si il n'y en a qu'une</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">prix_semence</td><td class="tdTableDefinition">prix_semence</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">quantite_semence_unite_surface</td><td class="tdTableDefinition">quantite_semence_unite_surface</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">produit_principal</td><td class="tdTableDefinition">produit_principal</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#cycle_cultural">cycle_cultural</a> through (code_cycle_cultural, code_parcelle, code_terre, code_exp, annee_observation, saison_cycle_cultural)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>plantation_plante_perenne<a name="plantation_plante_perenne"></a>
+</h1>
+<h2>
+      (Physical Name: plantation_plante_perenne)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_pp (PK)</td><td class="tdTableDefinition">code_pp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#terre">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#terre">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_terre (PK)
+                &nbsp;(<a href="#terre">FK</a>)
+              </td><td class="tdTableDefinition">code_terre</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nom_pp</td><td class="tdTableDefinition">nom_pp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">surface_pp</td><td class="tdTableDefinition">surface_pp</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">surface d&eacute;pend de la surface de la terre certainement</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_pp</td><td class="tdTableDefinition">type_pp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">fruit<br>epice<br>forestier</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#terre">terre</a> through (code_terre, code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>production<a name="production"></a>
+</h1>
+<h2>
+      (Physical Name: production)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_production (PK)</td><td class="tdTableDefinition">code_production</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_produit</td><td class="tdTableDefinition">type_produit</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">elevage<br>culture<br>produit transforme<br>bois</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nom_produit</td><td class="tdTableDefinition">nom_produit</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">lait<br>oeufs<br>cuir<br>laine<br>peaux<br>plumes<br>viande vivante<br>viande carcasse<br>autre<br>nom produit pour de la culture ou du transforme</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">quantite_produit</td><td class="tdTableDefinition">quantite_produit</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">prix_marche_local</td><td class="tdTableDefinition">prix_marche_local</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">unite_production</td><td class="tdTableDefinition">unite_production</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#debouche_produit">debouche_produit</a> referencing (code_exp, annee_observation, code_production)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>projet<a name="projet"></a>
+</h1>
+<h2>
+      (Physical Name: projet)
+      </h2>
+<p class="comment">si profil = agence de d&eacute;veloppement ou d&eacute;cideur politique<br>
+<br>variables suivies et objectif</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_projet (PK)</td><td class="tdTableDefinition">code_projet</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">chef_projet</td><td class="tdTableDefinition">chef_projet</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cible_projet</td><td class="tdTableDefinition">cible_projet</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">id INT PRIMARY KEY<br>cible<br>date_debut DATE<br>date_fin DATE<br>objectif VARCHAR[1000]<br>variables_objectif ENUM<br>variables_suivis ENUM<br>evaluation INT[2]<br>budget float[7]</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">budget_projet</td><td class="tdTableDefinition">budget_projet</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_debut_projet</td><td class="tdTableDefinition">annee_debut_projet</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_fin_projet</td><td class="tdTableDefinition">annee_fin_projet</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">evaluation_projet</td><td class="tdTableDefinition">evaluation_projet</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#chef_projet">chef_projet</a> referencing (code_projet)</li>
+<li>
+<a href="#participe_projet">participe_projet</a> referencing (code_projet)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>semence<a name="semence"></a>
+</h1>
+<h2>
+      (Physical Name: semence)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#conso_intermediaire">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#conso_intermediaire">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_ci (PK)
+                &nbsp;(<a href="#conso_intermediaire">FK</a>)
+              </td><td class="tdTableDefinition">code_ci</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">origine_semence</td><td class="tdTableDefinition">origine_semence</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#conso_intermediaire">conso_intermediaire</a> through (code_ci, code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>service_domestique<a name="service_domestique"></a>
+</h1>
+<h2>
+      (Physical Name: service_domestique)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_sd (PK)</td><td class="tdTableDefinition">code_sd</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">categorie_service</td><td class="tdTableDefinition">categorie_service</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">acces information<br>acces internet<br>acces mobilite<br>sanitaire<br>electricite<br>logement<br>chauffage eau chaude</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nom_service</td><td class="tdTableDefinition">nom_service</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">radio<br>t&eacute;l&eacute;phone<br>tv<br>ordi<br>v&eacute;lo<br>charette<br>voiture<br>moto<br>camion</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>stock<a name="stock"></a>
+</h1>
+<h2>
+      (Physical Name: stock)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_produit_stock (PK)</td><td class="tdTableDefinition">code_produit_stock</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">quantite_stock</td><td class="tdTableDefinition">quantite_stock</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nom_produit_stock</td><td class="tdTableDefinition">nom_produit_stock</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>terre<a name="terre"></a>
+</h1>
+<h2>
+      (Physical Name: terre)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#exploitation">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_terre (PK)</td><td class="tdTableDefinition">code_terre</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">mode_acquisition</td><td class="tdTableDefinition">mode_acquisition</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">gouvernement,<br>famille,<br>amis,<br>location courte ou longue 3ans,<br>achat,<br>partage,<br>emprunt,<br>dot, <br>cadeau, sans autorisation</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_terre</td><td class="tdTableDefinition">type_terre</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">1 : terres agricoles utilis&eacute;es<br>2 : terres foresti&egrave;res<br>3 : terres agricoles  non utilis&eacute;es<br>4 : terres bois&eacute;es<br>5 : terres aquaculture<br>6 : prairie<br>7 : cours de fermes<br>8 : Autres terres<br>
+<br>CF page 15 variables ad&egrave;les</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">superficie_terre</td><td class="tdTableDefinition">superficie_terre</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">regime_foncier</td><td class="tdTableDefinition">regime_foncier</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">droit coutumier<br>pleine propri&eacute;t&eacute;<br>droit communaut&eacute;<br>coop&eacute;ratove<br>etatique<br>bail<br>autre</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">faire_valoir</td><td class="tdTableDefinition">faire_valoir</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">1-faire-valoir direct reconnu en droit<br>2-faire valoir direct non reconnu en droit<br>3-faire valoir indirect<br>4-autre faire valoir</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">attestation_prop</td><td class="tdTableDefinition">attestation_prop</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#exploitation">exploitation</a> through (code_exp, annee_observation)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#parcelle">parcelle</a> referencing (code_terre, code_exp, annee_observation)</li>
+<li>
+<a href="#plantation_plante_perenne">plantation_plante_perenne</a> referencing (code_terre, code_exp, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>utilisateur<a name="utilisateur"></a>
+</h1>
+<h2>
+      (Physical Name: utilisateur)
+      </h2>
+<p class="comment">un utilisateur est un individu ou l'inverse</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">login (PK)</td><td class="tdTableDefinition">login</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">id_individu
+                &nbsp;(<a href="#individu">FK</a>)
+              </td><td class="tdTableDefinition">id_individu</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">unique</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">pays</td><td class="tdTableDefinition">pays</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">profil</td><td class="tdTableDefinition">profil</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">JSON</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_telephone</td><td class="tdTableDefinition">numero_telephone</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">adresse_mail</td><td class="tdTableDefinition">adresse_mail</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">mot_de_passe</td><td class="tdTableDefinition">mot_de_passe</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#individu">individu</a> through (id_individu)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#chef_projet">chef_projet</a> referencing (login)</li>
+<li>
+<a href="#auteur_etude">auteur_etude</a> referencing (login)</li>
+<li>
+<a href="#participe_projet">participe_projet</a> referencing (login)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>utilisation_fertilisant<a name="utilisation_fertilisant"></a>
+</h1>
+<h2>
+      (Physical Name: utilisation_fertilisant)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_cycle_cultural (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">code_cycle_cultural</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_parcelle (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">code_parcelle</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_terre (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">code_terre</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">saison_cycle_cultural (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">saison_cycle_cultural</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">saison<br>contre_saison</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nombre_fertilisant_cycle</td><td class="tdTableDefinition">nombre_fertilisant_cycle</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">fertilisation_par_culture_intercalaire</td><td class="tdTableDefinition">fertilisation_par_culture_intercalaire</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">fertilisation_par_animaux</td><td class="tdTableDefinition">fertilisation_par_animaux</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_fertilisant</td><td class="tdTableDefinition">type_fertilisant</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">mineral<br>organique<br>mixte<br>autre</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">quantite_fertilisant</td><td class="tdTableDefinition">quantite_fertilisant</td><td class="tdTableDefinition">DOUBLE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cout_fertilisant</td><td class="tdTableDefinition">cout_fertilisant</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#cycle_cultural">cycle_cultural</a> through (code_cycle_cultural, code_parcelle, code_terre, code_exp, annee_observation, saison_cycle_cultural)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>utilisation_fertilisant_exp<a name="utilisation_fertilisant_exp"></a>
+</h1>
+<h2>
+      (Physical Name: utilisation_fertilisant_exp)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#conso_intermediaire">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#conso_intermediaire">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_ci (PK)
+                &nbsp;(<a href="#conso_intermediaire">FK</a>)
+              </td><td class="tdTableDefinition">code_ci</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">fertilisation_par_animaux_exp</td><td class="tdTableDefinition">fertilisation_par_animaux_exp</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">fertilisation_par_culture_intercalaire_exp</td><td class="tdTableDefinition">fertilisation_par_culture_intercalaire_exp</td><td class="tdTableDefinition">BOOLEAN</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_fertilisant_exp</td><td class="tdTableDefinition">type_fertilisant_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">organique<br>min&eacute;rale<br>mixte<br>autre</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#conso_intermediaire">conso_intermediaire</a> through (code_exp, code_ci, annee_observation)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>utilisation_phyto<a name="utilisation_phyto"></a>
+</h1>
+<h2>
+      (Physical Name: utilisation_phyto)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_cycle_cultural (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">code_cycle_cultural</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_parcelle (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">code_parcelle</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_terre (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">code_terre</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">saison_cycle_cultural (PK)
+                &nbsp;(<a href="#cycle_cultural">FK</a>)
+              </td><td class="tdTableDefinition">saison_cycle_cultural</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">saison<br>contre_saison</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">prix_phyto</td><td class="tdTableDefinition">prix_phyto</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">quantite_phyto</td><td class="tdTableDefinition">quantite_phyto</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nombre_phyto_cycle</td><td class="tdTableDefinition">nombre_phyto_cycle</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#cycle_cultural">cycle_cultural</a> through (code_cycle_cultural, code_parcelle, code_terre, code_exp, annee_observation, saison_cycle_cultural)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>vente_produit<a name="vente_produit"></a>
+</h1>
+<h2>
+      (Physical Name: vente_produit)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_exp (PK)
+                &nbsp;(<a href="#debouche_produit">FK</a>)
+              </td><td class="tdTableDefinition">code_exp</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">annee_observation (PK)
+                &nbsp;(<a href="#debouche_produit">FK</a>)
+              </td><td class="tdTableDefinition">annee_observation</td><td class="tdTableDefinition">FLOAT</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">code_production (PK)
+                &nbsp;(<a href="#debouche_produit">FK</a>)
+              </td><td class="tdTableDefinition">code_production</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type_vente</td><td class="tdTableDefinition">type_vente</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">directe amap march&eacute; ferme<br>indirecte<br>circuit longs<br>courts</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">prix_vente</td><td class="tdTableDefinition">prix_vente</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#debouche_produit">debouche_produit</a> through (code_exp, annee_observation, code_production)</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
