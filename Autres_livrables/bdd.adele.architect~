@@ -1808,7 +1808,7 @@ courts</remarks>
  <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="1.0" viewportX="2261" viewportY="1113" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="1.0" viewportX="2687" viewportY="1877" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB9" x="3125" y="2516" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB23" x="3197" y="1321" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB35" x="3022" y="1595" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
@@ -1882,7 +1882,7 @@ courts</remarks>
   <table-link relationship-ref="REL529" pkConnection="0.5106382978723404" fkConnection="0.49122807017543857" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
   <table-link relationship-ref="REL486" pkConnection="0.2903225806451613" fkConnection="0.49122807017543857" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL462" pkConnection="0.0650887573964497" fkConnection="0.7801418439716312" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL465" pkConnection="0.21893491124260356" fkConnection="0.7751479289940828" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL465" pkConnection="0.16568047337278108" fkConnection="0.28994082840236685" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL468" pkConnection="0.7928994082840237" fkConnection="0.24822695035460993" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
   <table-link relationship-ref="REL555" pkConnection="0.475177304964539" fkConnection="0.494949494949495" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
   <table-link relationship-ref="REL559" pkConnection="0.46464646464646464" fkConnection="0.5353535353535354" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
