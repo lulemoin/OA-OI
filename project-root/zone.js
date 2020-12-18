@@ -34,7 +34,7 @@ function init() {
 function init2(){
     init();
     const cerclePerf = {
-        x: 100,
+        x: 150,
         y: 100,
         r_ext: 75,
         r_int: 75 * 0.8
@@ -77,13 +77,15 @@ function init2(){
         .attr("d", arc({startAngle:0, endAngle:(Math.PI*2*(1-moy_perfs/100))}))
 
     var text_perf = svg.append("text")
-        .attr("x", "-0.5em")
+        .style("text-anchor", "middle")
+        //.attr("x", "-0.5em")
         .attr("y", "0.25em")
         .attr("font-size", "2.5em")
         .text(Math.round(moy_perfs));
 
     var text_perf = svg.append("text")
-        .attr("x", "-4em")
+        .style("text-anchor", "middle")
+        //.attr("x", "-4em")
         .attr("y", cerclePerf.r_ext*1.5)
         .attr("font-size", "1.5em")
         .text("Indicateur de performance");

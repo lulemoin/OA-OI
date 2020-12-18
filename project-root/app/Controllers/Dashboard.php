@@ -2,9 +2,11 @@
 
 use App\Models\UsersModel;
 use phpDocumentor\Reflection\Location;
+use App\Models\pbModel;
 
 class Dashboard extends BaseController
 {
+
 
     public function create()
     {
@@ -70,6 +72,8 @@ class Dashboard extends BaseController
 	public function index()
     {
         session_start();
+        $pbm=new pbModel();
+        $pbm->getPb(10000);
         return view('dashboard_view');
 
     }

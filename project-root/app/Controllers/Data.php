@@ -10,7 +10,7 @@ class Data extends BaseController
         session_start();
         $um = new UsersModel();
         //$perfs=$um->getPerfs();
-	    return view('data_view', ["moy_perf"=>100]);
+	    return view('data_view', ["moy_perf"=>75]);
 	}
 
 

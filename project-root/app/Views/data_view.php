@@ -8,17 +8,15 @@
         <p class="lead text-center">Je peux ici chercher tout type de données que ce soit par zone géographique ou selon les typologies.</p>
     </div>
 </div>
-<div class="d-flex justify-content-end">
-    <div id="mapid" class="m-5 col-md-8">
-    </div>
-</div>
+<div class="d-flex flex-row">
+    <div id="mapid" class="m-5 col-md-6 "></div>
 
-
-<div id="performance">
-
-    <?php echo $moy_perf; ?>
+    <div id="performance" class="m-5 col-md-4"><?php echo $moy_perf; ?></div>
 
 </div>
+
+
+
 
 <?php $content = ob_get_clean(); ?>
 
