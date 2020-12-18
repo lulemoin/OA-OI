@@ -70,7 +70,7 @@ function init2(){
         .innerRadius(cerclePerf.r_int)
         .outerRadius(cerclePerf.r_ext);
 
-    var sector = svg.append("path")
+    var sector_white = svg.append("path")
         .attr("fill", "white")
         .attr("stroke-width", 10)
         .attr("stroke", "white")
@@ -96,14 +96,14 @@ function init2(){
     var prog_bar = svg.append("rect")
         .attr("x", -100)
         .attr("y", 300)
-        .attr("width", )
-        .attr("height", )
+        .attr("width", 100 )
+        .attr("height", 100)
         .attr("fill","green");
 
     var prog_bar2 = svg.append("rect")
         .attr("x", -100)
         .attr("y", 300)
-        .attr("width", )
-        .attr("height", )
+        .attr("width", 100)
+        .attr("height", 100)
         .attr("fill","green");
 }

@@ -9,8 +9,8 @@ class Data extends BaseController
 	{
         session_start();
         $um = new UsersModel();
-        $perfs=$um->getPerfs();
-	    return view('data_view', ["moy_perf"=>array_sum($perfs)/count($perfs)]);
+        //$perfs=$um->getPerfs();
+	    return view('data_view', ["moy_perf"=>100]);
 	}
 
 
