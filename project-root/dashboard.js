@@ -12,6 +12,7 @@ function init_data(){
 	compo.title="Composition des revenus"
 
 	init_dash(compo);
+	init_bar();
 }
 
 
@@ -25,9 +26,9 @@ function init_dash(input) {
 	var zoomed = 0
 	var zoomed2 = 0
 	opacity = "0%"
-	var dec1 = width/2;
+	var dec1 = width/3;
 	var decy =200
-	var dec2 = width/2;
+	var dec2 = width-dec1;
 
 
 	/*var zoom = d3.zoom()
@@ -70,6 +71,9 @@ function init_dash(input) {
 
 //Fonction de zoom en cliquant sur les svg et apparition des textes
 	function clicked1(d) {
+		if (zoomed==0 && zoomed2==1){
+			return
+		}
 		var x, y, k, opacity;
 
 
@@ -105,7 +109,9 @@ function init_dash(input) {
 
 	function clicked2(d) {
 		var x, y, k, opacity;
-
+	if (zoomed==1 && zoomed2==0){
+		return
+	}
 
 // si le svg n'est pas zoomé, alors on zoom
 		if (zoomed2 == 0) {
@@ -145,9 +151,9 @@ function init_dash(input) {
 		.outerRadius(120);
 
 //Création des echelles de couleurs pour les pie chart
-	var colorScale = d3.scaleSequential(d3.interpolate("purple", "orange")).domain([20, 40, 60, 80, 100]);
+	var colorScale = d3.scaleSequential(d3.interpolate("pink", "orange")).domain([20, 40, 60, 80, 100]);
 
-	var colorScale2 = d3.scaleSequential(d3.interpolate("yellow", "orange", "green")).domain([100, 500, 600, 900, 1000]);
+	var colorScale2 = d3.scaleSequential(d3.interpolate("yellow", "orange")).domain([100, 500, 600, 900, 1000]);
 
 
 //Génération des pie chart
@@ -300,3 +306,8 @@ function init_dash(input) {
 
 }
 
+function init_bar(){
+
+	svg=d3.select("#barchart").append("svg");
+
+}
