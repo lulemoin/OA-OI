@@ -40,6 +40,7 @@ function init2(){
         r_int: 75 * 0.8
     }
 
+
     var moy_perfs = document.getElementById("performance").innerHTML;
     document.getElementById("performance").innerHTML="";
 

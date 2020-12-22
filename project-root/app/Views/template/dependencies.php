@@ -11,3 +11,13 @@
     <script src="https://d3js.org/d3.v5.js"></script>
 
 <?php endif; ?>
+
+<?php if($title=='Mon compte'): ?>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-color.v2.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
+    <script src="/OA-OI_git/project-root/dashboard.js"></script>
+
+
+<?php endif; ?>
