@@ -230,14 +230,16 @@ root.y0 = 0;
   
 
 //node.forEach((click))
-
+console.log(root.children)
+console.log(root.children.length)
+//click(root.children[1])
 click(root);
-click(tree[15])
-update(root);
+
+
 //click(treeData[1])
 //click(treeData[0])
 //treeData.forEach(click("d"))
-//click(root);
+//click(root);*/
 
 
 d3.select(self.frameElement).style("height", "500px");
@@ -347,7 +349,6 @@ function update(source) {
 function click(d) {
   //click pour rétrécir
  if (d.children) {
-   console.log(d)
 	d._children = d.children;
 	d.children = null;
   } else {

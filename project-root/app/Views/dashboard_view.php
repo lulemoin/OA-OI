@@ -18,7 +18,7 @@
     <br>
     <br>
 </div>
-    <?php echo $pb ?>
+    <?php //echo $pb ?>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template/template.php'); ?>
