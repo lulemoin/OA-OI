@@ -7,12 +7,12 @@ use CodeIgniter\Model;
 class UsersModel extends Model
 {
     protected $table = 'users';
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'login';
 
     //protected $returnType = 'array';
    // protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['login', 'user_profile', 'prenom', 'nom', 'email', 'ville', 'mot_de_passe'];
+    protected $allowedFields = ['login', 'id_individu',  'mot_de_passe','user_profile', 'prenom', 'nom', 'ville'];
 
     //protected $useTimestamps = false;
     //protected $createdField = 'created_at';
@@ -33,8 +33,6 @@ class UsersModel extends Model
         }
 
     }
-
-
 
     public function checkIt($login, $password)
     {

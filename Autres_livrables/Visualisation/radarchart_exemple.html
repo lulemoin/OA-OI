@@ -1,0 +1,282 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<meta charset="utf-8"> 
+	<script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"> 
+	</script> 
+	<script src= 
+		"https://d3js.org/d3.v4.min.js"> 
+	</script> 
+</head> 
+
+<body> 
+	<h1 style="text-align:center; color:green;"> 
+		GeeksforGeeks 
+	</h1> 
+	
+	<center> 
+	</center> 
+
+	<script> 
+
+const width=600
+const height=1000
+var size=0.6*width/2
+
+
+//Transformation des données pour utiliser le lineradial
+//L'ensemble data contient les angle puis les distances
+function getData(length, values){
+	var data=[]
+	for(i=0; i<length+1; i++){
+			data.push([(i*2*Math.PI/length)+Math.PI/2, values[i%length]/100*size])
+		}
+return data;
+}
+
+
+//Création des donénes pour les niveaux d'échelle de pourcentage
+function getDataChart(length,percentage=1){
+	var data =[]
+	for(i=0; i<length+1; i++){
+		data.push([(i*2*Math.PI/length)+Math.PI/2, size*percentage])
+	}
+return data;
+}
+
+
+//Création des données pour la création des axes
+function getDataAxes(length){
+	var data=[]
+	for(i=0; i<length+1; i++){
+			data.push([(i*2*Math.PI/length)+Math.PI/2, 1.2*size])
+			data.push([0,0])
+		}
+return data;
+}
+
+
+//Création des niveaux de pourcentage
+function getLevel(color, level, length){
+		var lineRadialGeneratordata=d3.lineRadial();
+		d3.select("#gfg") 
+		.select("g") 
+		.append("path") 
+		.attr("d", lineRadialGeneratordata(getDataChart(length, level))) 
+		.attr("fill", "none") 
+		.attr("stroke", color )
+		.attr("stroke-width","0.35px"); 
+}
+
+//Création de l'étoile puis des échelles de pourcentage
+function getScale(length){
+	var lineRadialGeneratordata=d3.lineRadial();
+	d3.select("#gfg") 
+		.select("g") 
+		.append("path") 
+		.attr("d", lineRadialGeneratordata(getDataAxes(length)) )
+		.attr("stroke", "black")
+		.attr("stroke-width","0.5px"); 
+
+
+		colors=["black","red", "orange","green"];
+		levels=[0.4,0.6,0.8, 1]
+
+		for(l=0; l<colors.length; l++){
+			getLevel(colors[l], levels[l], length)
+		}
+
+}
+
+
+
+//ajout des différentes valeurs sur chaque axe
+function addData(value, color){
+	var lineRadialGeneratordata=d3.lineRadial();
+	d3.select("#gfg") 
+		.select("g") 
+		.append("path")
+		.attr("d", lineRadialGeneratordata(getData(length, value))) 
+		.attr("fill", color) 
+		.attr("stroke", color)
+		.attr("stroke-width","2px")
+		.attr("fill-opacity", 0.25)
+		.attr("stroke-opacity",0.8)
+		.on("mouseover", function(){
+			d3.select(this).transition().duration(100).attr("fill-opacity",0.75).attr("stroke-opacity",1)
+		})
+		.on("mouseout", function(){
+			d3.select(this).transition().duration(200).attr("fill-opacity",0.32).attr("stroke-opacity",0.8)
+		});
+
+}
+
+
+function addTitles(titles){
+
+	var locations=[]
+	for(k=0; k<length; k++){
+			locations.push([Math.cos(2*Math.PI*k/titles.length)*(size+70) ,Math.sin(2*Math.PI*k/titles.length)*(size+70)])
+		}
+		// d3.select("g").append("text").data(titles)
+var g2=d3.select("svg").append("g").attr("transform","translate("+width/2 +","+ (height-300)/2 +")")
+
+	for(let i=0; i<titles.length; i++){
+			g2.append("text").text(titles[i])
+
+				.attr("x", locations[i][0])
+				.attr("y", locations[i][1])
+				.attr("text-anchor", "middle")
+	}
+return;
+}
+
+
+
+function getTips(){
+	var legendScale = d3.scaleLinear()
+    .domain([0, 100])
+    .range([0, size]);
+
+    var legendAxis = d3.select("svg").append("g")
+    .attr('transform', 'translate('+width/2 +","+ (height-300)/2 +")")
+    .call(d3.axisBottom(legendScale).ticks(6));
+}
+
+function addLegend(legendes){
+	for(let b=0; b<legendes.length; b++)
+	{
+		d3.select("svg").select("g").append("rect")
+			.attr("x",-size-90)
+			.attr("y",size+120+50*b)
+			.attr("height",30)
+			.attr("width",30)
+			.attr("fill",color[b])
+			.attr("stroke", color[b])
+			.attr("stroke-width", "2px")
+			.attr("stroke-opacity",0.8)
+			.attr("fill-opacity",0.2)
+
+		d3.select("svg").select("g")
+			.append("text")
+			.text(legendes[b])
+			.attr("x",-size-50)
+			.attr("y",size+140+50*b)
+			.attr("fill",color)
+	}
+
+
+}
+
+function getTitles(length){
+	var titles=[];
+		for(c=0; c<length; c++){
+		titles[c]="Axe "+(c+1);
+	}
+	return titles;
+}
+
+function getLegend(tabValues_length){
+	var legendes=[];
+		for(let c=0; c<tabValues_length; c++){
+		legendes[c]="Données exploitation "+(c+1);
+	}
+	return legendes;
+}
+
+
+
+
+
+//Générer automatiquement un radarchart à partir d'un ensemble de liste de valeurs de même taille 
+function getRadarChart(tabValues, titles, legends){
+
+		length=tabValues[0].length
+	if(legends!=null && legends.length!=tabValues.length){
+		alert("Il faut autant de légendes que d'ensembles de données")
+		return 
+	}
+
+
+	for(i=0; i<tabValues.length; i++){
+		if(tabValues[i].length!==tabValues[0].length || (titles!=null && titles.length!=tabValues[0].length)){
+			alert("les ensemble doivent être de même taille")
+			return; 
+		}
+	}
+
+var svg=d3.select("center").append("svg")
+		.attr("id", "gfg")
+		.attr("width", width)
+		.attr("height", height)
+		.style("background","white")
+
+var g=d3.select("svg").append("g").attr("transform","translate("+width/2 +","+ (height-300)/2 +")")
+
+
+	getScale(length);
+
+
+	for(j=0; j<tabValues.length; j++){
+		addData(tabValues[j],color[j])
+	}
+
+	//getTitles()
+
+if (titles==null){
+	var titles=getTitles(tabValues[0].length)
+}
+
+if(titles!=null){
+	addTitles(titles)
+}
+
+if(legends==null){
+	var legends=getLegend(tabValues.length)
+}
+
+if(legends!=null){
+	addLegend(legends);
+}
+
+
+
+
+getTips();
+}
+
+
+var values=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100]
+var values2=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100]
+var values3=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+Math.random()*100,Math.random()*100]
+var values4=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+Math.random()*100,Math.random()*100]
+var values5=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+Math.random()*100,Math.random()*100]
+var values6=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+Math.random()*100,Math.random()*100]
+
+
+
+categories=["Produit brut", "VAB","Capital", "Travail feminin", "Travail enfant", "Capital","VAB par capital", "Surface", "VAB par surface", "Main d'oeuvre", "VAB par main d'oeuvre", "Production bio", "Utilisation d'engrais", "Subvention","Entraide"]//,"Organisation producteurs"]
+
+categories2=["Produit brut", "VAB","Capital", "Travail feminin", "Travail enfant", "Capital","VAB par capital", "Surface", "VAB par surface"]
+legendes=["Exploitation des Hoareau","Exploitation des Payet"]
+color=["red","blue","green","orange","yellow"]
+
+
+//getRadarChart([values, values2], categories, legendes);
+
+//getRadarChart([values3, values4], categories2, legendes)
+
+getRadarChart([values3, values4, values5, values6], categories2, null)
+
+	</script> 
+</body> 
+
+</html> 

@@ -24,7 +24,7 @@
 
 <p class="text-center mt-3 lead">Connectez-vous pour voir votre profil</p>
 
-<form action='/OA-OI_git/project-root/public/dashboard/connection' method="post" class="justify-content-center">
+<form action='/OA-OI_git/project-root/public/home/connection' method="post" class="justify-content-center">
 
     <div class="row justify-content-center">
         <div class="form-row mt-4 col-md-6">

@@ -15,7 +15,7 @@
 
 <div class="col-md justify-content-center">
     <h2 class="mb-4 display-4 text-center">Inscrivez-vous</h2>
-    <form class="col-md-12" action="/OA-OI_git/project-root/public/Dashboard/create" method="post">
+    <form class="col-md-12" action="/OA-OI_git/project-root/public/Register/create" method="post">
 
         <fieldset class="form-group">
             <div class="row">
@@ -62,22 +62,24 @@
                 <input name="nom" type="text" class="form-control" id="inputName" placeholder="Hoarau">
             </div>
         </div>
-        <div class="form-group mt-2">
-            <label for="inputEmail col-form-label">Email</label>
-            <input name="email" type="email" class="form-control" id="inputEmail">
-        </div>
+
         <div class="form-row mt-2">
             <div class="form-group col-md-8">
                 <label for="inputCitycol-form-label">Ville</label>
                 <input name="ville" type="text" class="form-control" id="inputCity">
             </div>
-            <div class="form-group col-md-4">
+        <!--
+                <div class="form-group mt-2">
+            <label for="inputEmail col-form-label">Email</label>
+            <input name="email" type="email" class="form-control" id="inputEmail">
+        </div>
+        <div class="form-group col-md-4">
                 <label for="inputState">Pays</label>
                 <select name="pays" id="inputState" class="form-control">
                     <option selected>France</option>
                     <option>...</option>
                 </select>
-            </div>
+            </div> -->
         </div>
 
 <!--
