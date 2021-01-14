@@ -7,8 +7,25 @@
 "https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"> 
 	</script> 
 	<script src= 
-		"https://d3js.org/d3.v4.min.js"> 
+		"https://d3js.org/d3.v6.min.js"> 
 	</script> 
+
+<style>
+
+  svg {
+
+    padding: 20px;
+    font: 15px sans-serif;
+    background: #48707B;
+    border: 100px;
+    stroke-width: 1px;
+    width:100%;
+    height:100%;
+
+}
+
+</style>
+
 </head> 
 
 <body> 
@@ -21,10 +38,12 @@
 
 	<script> 
 
-const width=600
-const height=1000
-var size=0.6*width/2
-
+ const width=1300
+ const height=800
+var size=200
+var click=[1,1,1,1,1]
+var click2=[1,1,1,1,1]
+var clickdetails=0
 
 //Transformation des données pour utiliser le lineradial
 //L'ensemble data contient les angle puis les distances
@@ -98,19 +117,41 @@ function addData(value, color){
 	d3.select("#gfg") 
 		.select("g") 
 		.append("path")
-		.attr("d", lineRadialGeneratordata(getData(length, value))) 
-		.attr("fill", color) 
-		.attr("stroke", color)
-		.attr("stroke-width","2px")
-		.attr("fill-opacity", 0.25)
-		.attr("stroke-opacity",0.8)
+		.attr("id", color)//ajouter transition de style au démarrage
 		.on("mouseover", function(){
 			d3.select(this).transition().duration(100).attr("fill-opacity",0.75).attr("stroke-opacity",1)
 		})
 		.on("mouseout", function(){
 			d3.select(this).transition().duration(200).attr("fill-opacity",0.32).attr("stroke-opacity",0.8)
-		});
+		})
+		.attr("d", lineRadialGeneratordata(getData(length, [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]))) 
+		.transition("r").duration(1000)
+		.attr("d", lineRadialGeneratordata(getData(length, value))) 
+		.attr("fill", color) 
+		.attr("stroke", color)
+		.attr("stroke-width","2px")
+		.attr("fill-opacity", 0.2)
+		.attr("stroke-opacity",0.8);
+}
 
+/*
+function hideData(color){
+		var lineRadialGeneratordata=d3.lineRadial();
+	d3.select("#gfg") 
+		.select("g") 
+		.select("path#color")
+		.transition().duration(1000)
+		.attr("d", lineRadialGeneratordata(getData(9, [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]))) 
+
+}*/
+
+
+function getTitles(length){
+	var titles=[];
+		for(c=0; c<length; c++){
+		titles[c]="Axe "+(c+1);
+	}
+	return titles;
 }
 
 
@@ -118,20 +159,21 @@ function addTitles(titles){
 
 	var locations=[]
 	for(k=0; k<length; k++){
-			locations.push([Math.cos(2*Math.PI*k/titles.length)*(size+70) ,Math.sin(2*Math.PI*k/titles.length)*(size+70)])
+			locations.push([Math.cos(2*Math.PI*k/titles.length)*(size*1.5) ,Math.sin(2*Math.PI*k/titles.length)*(1.5*size)])
 		}
-		// d3.select("g").append("text").data(titles)
-var g2=d3.select("svg").append("g").attr("transform","translate("+width/2 +","+ (height-300)/2 +")")
+var g=d3.select("svg").select("g")
 
 	for(let i=0; i<titles.length; i++){
-			g2.append("text").text(titles[i])
+			g.append("text").text(titles[i])
 
 				.attr("x", locations[i][0])
 				.attr("y", locations[i][1])
+				.attr("font-size","20px")
 				.attr("text-anchor", "middle")
 	}
 return;
 }
+
 
 
 
@@ -141,42 +183,10 @@ function getTips(){
     .range([0, size]);
 
     var legendAxis = d3.select("svg").append("g")
-    .attr('transform', 'translate('+width/2 +","+ (height-300)/2 +")")
+    .attr('transform', 'translate('+2*size +","+ 1.9*size +")")
     .call(d3.axisBottom(legendScale).ticks(6));
 }
 
-function addLegend(legendes){
-	for(let b=0; b<legendes.length; b++)
-	{
-		d3.select("svg").select("g").append("rect")
-			.attr("x",-size-90)
-			.attr("y",size+120+50*b)
-			.attr("height",30)
-			.attr("width",30)
-			.attr("fill",color[b])
-			.attr("stroke", color[b])
-			.attr("stroke-width", "2px")
-			.attr("stroke-opacity",0.8)
-			.attr("fill-opacity",0.2)
-
-		d3.select("svg").select("g")
-			.append("text")
-			.text(legendes[b])
-			.attr("x",-size-50)
-			.attr("y",size+140+50*b)
-			.attr("fill",color)
-	}
-
-
-}
-
-function getTitles(length){
-	var titles=[];
-		for(c=0; c<length; c++){
-		titles[c]="Axe "+(c+1);
-	}
-	return titles;
-}
 
 function getLegend(tabValues_length){
 	var legendes=[];
@@ -187,6 +197,94 @@ function getLegend(tabValues_length){
 }
 
 
+function dataSelection(tab, legend, color){
+
+	var g =d3.select("svg").append("g")
+		g.append("text").attr("id","detailstitre")
+			.text("Choix des données")
+			.attr("x",width-size)
+			.attr("y",1.65*size)
+			.attr("font-size","35px")
+			.attr("text-anchor",'middle')
+
+	for(let i=0; i<tab.length; i++){
+		g.append("rect")
+			.attr("x",width-1.6*size)
+			.attr("y", 2*size+80*i)
+			.attr("height",20)
+			.attr("width",20)
+			.attr("fill",color[i])
+			.attr("stroke", color[i])
+			.attr("stroke-width", "2px")
+			.attr("stroke-opacity",0.8)
+			.attr("fill-opacity",0.6)
+			.on("click", function(){
+				if(click[i]==0){
+					d3.select(this).attr("fill-opacity",0.8)
+					d3.select("svg").select("path#"+ color[i]).remove()
+					addData(tab[i], color[i])
+					click[i]=1
+				}
+				else if(click[i]==1){
+					d3.select(this).attr("fill-opacity",0.2)
+					d3.select("svg").select("path#"+ color[i]).remove()
+					//hideData(color[i])
+					click[i]=0
+				}
+			});
+
+			g.append("text")
+			.text([legend[i]])
+			.attr("x",width-1.6*size+45)
+			.attr("y",2*size+80*i+15)
+
+
+	}
+}
+
+function graphSelection(){
+
+	var g=d3.select("svg").append("g")
+	g.append("text").attr("id","detailstitre")
+			.text("Choix du graphe")
+			.attr("x",width-size)
+			.attr("y",	0.35* size)
+			.attr("font-size","35px")
+			.attr("text-anchor",'middle')
+	g.append("text").attr("id","details")
+			.text("Plus de détails")
+			.attr("x",width-1.6*size+40)
+			.attr("y",0.7*size+15)
+
+
+		g.append("rect")
+		.attr("id","details")
+			.attr("x",width-1.6*size)
+			.attr("y",0.7*size)
+			.attr("height",20)
+			.attr("width",20)
+			.attr("fill","grey")
+			.attr("stroke", "black")
+			.attr("stroke-width", "2px")
+			.on("click", function(){
+				if(clickdetails==0){
+					d3.select("svg").remove()
+					getRadarChart(ValuesDetails[0], ValuesDetails[1], ValuesDetails[2])
+					d3.select("svg").selectAll("g").select("text#details").text("Moins de détails")
+					d3.select("svg").selectAll("g").select("rect#details").attr("fill","black")
+					clickdetails=1;
+					click=[1,1,1,1,1,1,1]
+			}
+				else if(clickdetails==1){
+					d3.select("svg").remove()
+					getRadarChart(Values2[0], Values2[1], Values2[2])
+					d3.select("svg").selectAll("g").select("text#details").text("Plus de détails")
+					d3.select("svg").selectAll("g").select("rect#details").attr("fill","white")
+					clickdetails=0;
+					click=[1,1,1,1,1,1,1]
+			}
+			})
+}
 
 
 
@@ -213,7 +311,32 @@ var svg=d3.select("center").append("svg")
 		.attr("height", height)
 		.style("background","white")
 
-var g=d3.select("svg").append("g").attr("transform","translate("+width/2 +","+ (height-300)/2 +")")
+var cadre=svg.append("rect")
+		.attr("width", width)
+		.attr("height", height)
+		.attr("fill","white")
+		.attr("stroke", "black")
+
+var cadre2=svg.append("rect")
+	.attr("id","graphSelect")
+		.attr("width", size*2)
+		.attr("height", height/3)
+		.attr("x", width-2*size)
+		.attr("fill","white")
+		.attr("stroke", "black")
+
+var cadre2=svg.append("rect")
+	.attr("id","dataSelect")
+		.attr("width", size*2)
+		.attr("height", 2*height/3)
+		.attr("x", width-2*size)
+		.attr("y", height/3)
+		.attr("fill","white")
+		.attr("stroke", "black")
+
+
+
+var g=d3.select("svg").append("g").attr("transform","translate("+2*size +","+ 1.9*size +")")
 
 
 	getScale(length);
@@ -236,10 +359,13 @@ if(titles!=null){
 if(legends==null){
 	var legends=getLegend(tabValues.length)
 }
-
+/*
 if(legends!=null){
 	addLegend(legends);
-}
+}*/
+
+dataSelection(tabValues,legends,color);
+graphSelection();
 
 
 
@@ -248,7 +374,7 @@ getTips();
 }
 
 
-var values=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+var values1=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
 Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100]
 var values2=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
 Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100]
@@ -263,10 +389,11 @@ Math.random()*100,Math.random()*100]
 
 
 
+
 categories=["Produit brut", "VAB","Capital", "Travail feminin", "Travail enfant", "Capital","VAB par capital", "Surface", "VAB par surface", "Main d'oeuvre", "VAB par main d'oeuvre", "Production bio", "Utilisation d'engrais", "Subvention","Entraide"]//,"Organisation producteurs"]
 
 categories2=["Produit brut", "VAB","Capital", "Travail feminin", "Travail enfant", "Capital","VAB par capital", "Surface", "VAB par surface"]
-legendes=["Exploitation des Hoareau","Exploitation des Payet"]
+legendes=["Exploitation des Hoareau","Moyenne territoriale"]
 color=["red","blue","green","orange","yellow"]
 
 
@@ -274,7 +401,21 @@ color=["red","blue","green","orange","yellow"]
 
 //getRadarChart([values3, values4], categories2, legendes)
 
-getRadarChart([values3, values4, values5, values6], categories2, null)
+var values3b=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+Math.random()*100,Math.random()*100]
+var values4b=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+Math.random()*100,Math.random()*100]
+var values5b=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+Math.random()*100,Math.random()*100]
+var values6b=[Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100,
+Math.random()*100,Math.random()*100]
+
+
+var ValuesDetails=([[values1, values2], categories, legendes])
+var Values=([[values3, values4], categories2, legendes])
+var Values2=([[values4, values5, values6], categories2, null])
+
+getRadarChart(Values2[0], Values2[1], Values2[2])
 
 	</script> 
 </body> 

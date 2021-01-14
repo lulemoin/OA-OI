@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Single line Chart</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <script src="https://d3js.org/d3-color.v2.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
+
+
+  <script src="https://d3js.org/d3.v6.js"></script>
+<style>
+
+  div.tooltip {
+    position: absolute;
+    text-align: center;
+    color: black;
+    padding:4px;
+    width: 90px;
+    height: 77px;
+    font: 15px sans-serif;
+    pointer-events: none;
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz">
+
+</div>
+
+<script>
+
+const zoom=d3.zoom()
+// set the dimensions and margins of the graph
+var margin = {top: 100, right: 360, bottom: 100, left: 60},
+    width = 1400 - margin.left - margin.right,
+    height = 800 - margin.top - margin.bottom;
+
+var widthrect=200
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")")
+
+      // .call(d3.zoom().on("zoom", function () { 
+      //      svg.attr("transform", d3.event.transform) 
+      // })) 
+
+svg.append("rect")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .attr("fill","white")
+    .attr("stroke-width",1)
+    .attr("stroke","black")
+    .attr("x",-margin.left).attr("y",-margin.top)
+
+
+
+//Read the data
+
+var data=[{year:2010, value:Math.random()*10},{year:2011, value:Math.random()*10},{year:2012, value:Math.random()*10},{year:2013, value:Math.random()*10},{year:2014, value:Math.random()*10},{year:2015, value:undefined},{year:2016, value:undefined},{year:2017, value:Math.random()*10},{year:2018, value:Math.random()*10},{year:2019, value:Math.random()*10},{year:2020, value:Math.random()*10},{year:2021, value:Math.random()*10}]
+var data2=[{year:2010, value:Math.random()*10},{year:2011, value:Math.random()*10},{year:2012, value:Math.random()*10},{year:2013, value:Math.random()*10},{year:2014, value:Math.random()*10},{year:2015, value:Math.random()*10},{year:2016, value:Math.random()*10},{year:2017, value:Math.random()*10},{year:2018, value:Math.random()*10},{year:2019, value:Math.random()*10},{year:2020, value:Math.random()*10},{year:2021, value:Math.random()*10}]
+
+
+
+var domain=d3.extent(data, function(d){return d.year})
+domain[0]-=0.5
+domain[1]+=0.5
+
+datas=[data]
+clicked=[]
+count=datas.length
+
+//try missing values chart
+
+
+var X= d3.scaleLinear()
+      .domain(domain)
+      .range([0, width])
+
+var xaxis=svg.append("g")
+  .attr("transform", "translate(0," + height + ")")
+  .call(d3.axisBottom(X).ticks(10))
+
+var Y = d3.scaleLinear()
+  .domain([0, 2+d3.max(data, function(d) { return d.value; })])
+  .range([ height, 0 ]);
+var yaxis=svg.append("g")
+  .call(d3.axisLeft(Y));
+
+var color=["steelblue","red","green","black"]
+var colorused=[]
+for(let i=0;i<datas.length; i++){
+  colorused[i]=color[i]
+}
+
+for(let i=0; i<datas.length; i++){
+  clicked[colorused[i]]=1
+}
+
+line0=d3.line()
+        .x(function(d) {return X(d.year)})
+        .y(function(d) { return Y(0)})
+
+line=d3.line()
+        .defined(d => !isNaN(d.value))
+        .x(function(d) { return X(d.year) })
+        .y(function(d) { return Y(d.value) })
+
+
+
+for(let k=0; k<datas.length; k++){
+
+  svg.append("path")
+  .attr("id",color[k]+"missing")
+      .datum(data.filter(line.defined()))
+      .attr("stroke", "#ccc")
+      .attr("d", line0)
+      .style("stroke-dasharray", ("3, 3"))
+      .transition().delay(400*k).duration(800)
+      .attr("d", line)
+      .attr("fill","none");
+
+
+    svg.append("path").attr("id",color[k])
+      .datum(datas[k])
+     .attr("fill", "none")
+     .attr("stroke", "steelblue")
+     .attr("stroke-width", "3px")
+     .attr("stroke-linejoin", "round")
+     .attr("stroke-linecap", "round")
+      .attr("stroke", color[k])
+      .attr("d", line0)
+        .transition().delay(400*k).duration(800)
+        .attr("d", line)
+
+
+}
+
+div=d3.select("body").append("div")   
+    .attr("class", "tooltip")               
+    .style("opacity", 0 )
+    .style("width",2*X(2010))
+    .style("background"," #283747")
+    .style("color", "white")
+    .style("top", (margin.top)+"px")
+
+
+for(let k=0; k<datas.length; k++){
+  
+   svg.append("g").selectAll("rect")
+    .data(datas[k])
+    .enter()
+    .append("rect")
+    .attr("id",function(d){return d.year})
+    .attr("x", function(d,i){return X(d.year-0.5)})
+    .attr("y", 0)
+    .attr("width", function(d,i){ return 2*X(2010)})
+    .attr("height", height)
+    .attr("stroke-width",0)
+    .attr("fill","#A2D9CE")
+    .attr("fill-opacity",0)
+    .attr("stroke-width",0.5)
+    .attr("stroke-opacity",0)
+    .on("mouseover",function(d,i){
+      if(i.value!=undefined)
+          if(count==1){
+            d3.select(this).attr("stroke-opacity",0.4)
+                    .attr("fill-opacity",0.6)
+
+            div.style("opacity", 1)
+            div.html("En " +i.year +" : <br><br>"+ i.value.toPrecision(2))  
+                  .style("left", X(i.year)+15+"px") 
+                  .style("top",Y(i.value)-50+"px")
+                }
+      } )   
+
+
+
+      .on("mouseout",function(d,i){
+            d3.select(this).attr("fill-opacity",0).attr("stroke-opacity",0)
+            div.style("opacity",0)})
+
+
+}
+
+  svg.append("g").selectAll("rect").data(colorused).enter().append("rect")
+      .attr("x", width+margin.right/4)
+      .attr("y", function(d,i){return i*40})
+      .attr("width",20)
+      .attr("height", 20)
+      .attr("stroke",function(d){return d})
+      .attr("fill",function(d){return d})
+      .on("click", function(d,i){
+        if(clicked[i]==1){
+                  d3.select("path#"+ i).transition().duration(800).attr("d",line0)
+                  d3.select("path#"+ i +"missing").transition().duration(800).attr("d",line0)
+                  d3.selectAll("g").select("#circle"+i).selectAll("circle").transition().duration(1000).attr("cy", Y(0)).attr("opacity",0)
+                  d3.select(this).attr("fill","white")
+                  clicked[i]=0
+                  count-=1
+                }
+        else{        
+          d3.select(this).attr("fill","steelblue")
+          d3.select("path#"+ i).transition().duration(800)
+          .attr("d", line)
+          d3.select("path#"+ i +"missing").transition().duration(800).attr("d",line)
+                  d3.selectAll("g").select("#circle"+i).selectAll("circle").transition().duration(1000).attr("cy", function(d){return Y(d.value)}).attr("opacity",1)
+          clicked[i]=1
+          count+=1
+        }})
+
+
+
+
+
+  /*svg.append("g").attr("id","circle").selectAll("circle").data(color).enter().append("circle").attr("id",function(d){return d})
+      .attr("cx", function(d,i){return 120*i})
+      .attr("cy",0)
+      .attr("r",50)
+      .attr("fill", function(d){return d})
+      .style("stroke", "gray")
+
+  svg.append("g").append("rect")
+      .attr("x", 800)
+      .attr("y", 0)
+      .attr("width",100)
+      .attr("height", 100)
+      .attr("stroke-width",0)
+      .attr("fill","black")
+      .on("click", function(d){d3.select("g#circle").selectAll("circle").attr("r",function(d,i){
+        console.log(i); console.log(d);return 5*d.length})})*/
+
+
+
+
+
+
+
+
+
+
+
+        //ZOOOM ET VIEW BOX GERER OPACITE EUX MEME ET GERER VALEURS NULL   FONCTION.PROPERTY
+        //POURQUOI LE +THIS.VALUE
+  </script>
+</body>
+</html>
+
+

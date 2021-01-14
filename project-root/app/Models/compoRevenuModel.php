@@ -29,14 +29,6 @@ class compoRevenuModel extends Model
             ->where(['exploitation'=>$code_exp])
             ->where(['annee_observation'=>$annee_observation])
             ->get()->getRow();
-        /*
-        $compo["Produit brut"]=$a->part_pb_exploitation;
-        $compo["Apport financier"]=$a->part_apport_financier;
-        $compo["Activite exp"]=$a->part_autre_act_exp;
-        $compo["Activite personne"]=$a->part_autre_act_pers;
-        $compo["title"]="Composition des revenus";*/
-
-
 
 
         $compo1["name"]="Produit brut";
@@ -49,23 +41,7 @@ class compoRevenuModel extends Model
         $compo4["size"]=round($a->part_autre_act_pers);
         $compo=array($compo1, $compo2, $compo3, $compo4);
         $compo = json_encode($compo);//, JSON_NUMERIC_CHECK);
-        //$compo = preg_replace('/"([a-zA-Z_]+[a-zA-Z0-9_]*)":/','$1:',$compo);
-        //dd($compo);
 
-       // dd($compo);
-
-        //dd($compo);
-       // $compo["Activite"]=$a->part_autre_act_agr_pers;
-        //$compo["produit_brut"]=$a->part_autre_act_nagr_pers;
-
-
-        //Création des jeux de données pour les pie chart
-        /*var input = [
-            {name: "Vente", size: "1000"},
-            {name: "Apport financier", size: "200"},
-            {name: "Revenu non agricole", size: "300"}
-        ]
-        input.title = "Composition des revenus"*/
 
         return $compo;
     }
