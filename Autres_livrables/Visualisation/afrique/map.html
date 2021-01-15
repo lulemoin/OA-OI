@@ -120,6 +120,8 @@ var pres=d3.select("body").append("div")
 
 var mincartodb=11;
 var maxcartodb=48;
+var min_exp_oa=0
+var max_exp_oa=1000;
 var min_exp_f=100;
 var max_exp_f=500;
 var min_exp=500;
@@ -127,7 +129,7 @@ var max_exp=5000;
 var sizeleg=12;
 
 
-var scaleSelection=["cartodb_id", "exp_f","exp"]
+var scaleSelection=["exp_oa", "exp_f","exp"]
 
 var selected=scaleSelection[1]
 var selectedbefore
@@ -143,13 +145,13 @@ if(!colorScale){
 
 
 switch(selected){
-	case "cartodb_id": colorScale= d3.scaleSequential(d3.interpolate("yellow", "red")).domain([mincartodb, maxcartodb]);
-	delta=maxcartodb-mincartodb
-	min=mincartodb
-	max=maxcartodb
+	case "exp_oa": colorScale= d3.scaleSequential(d3.interpolate("white", "blue")).domain([min_exp_oa, max_exp_oa]);
+	delta=max_exp_oa-min_exp_oa
+	min=min_exp_oa
+	max=max_exp_oa
 	break;
 
-	case "exp_f" : colorScale=d3.scaleSequential(d3.interpolate("green", "#EC7063 ")).domain([min_exp_f, max_exp_f]);
+	case "exp_f" : colorScale=d3.scaleSequential(d3.interpolate("green", "red ")).domain([min_exp_f, max_exp_f]);
 		delta=max_exp_f-min_exp_f
 		min=min_exp_f
 		max=max_exp_f
@@ -168,7 +170,7 @@ switch(selected){
 
 function coloration(d){
 	 if(!countries.includes(d.properties.name)){return "grey"}
-      else if(selected=="cartodb_id"){return colorScale(d.properties.cartodb_id)}
+      else if(selected=="exp_oa"){return colorScale(d.properties.exp_oa)}
       else if(selected=="exp_f"){return colorScale(d.properties.exp_f)} 
       else if(selected=="exp"){return colorScale(d.properties.exp)}
       	else{return "green"}
@@ -179,7 +181,7 @@ function coloration(d){
 
 function colorationb(d){
 	 if(!countries.includes(d.properties.name)){return "grey"}
-      else if(selectedbefore=="cartodb_id"){return colorScaleBefore(d.properties.cartodb_id)}
+      else if(selectedbefore=="exp_oa"){return colorScaleBefore(d.properties.exp_oa)}
       else if(selectedbefore=="exp_f"){return colorScaleBefore(d.properties.exp_f)} 
       else if(selectedbefore=="exp"){return colorScaleBefore(d.properties.exp)}
       	else{return "grey"}
@@ -277,7 +279,7 @@ if (first==1){
 	var scaleSelect=svg.select("g").attr("class","dataChoice").selectAll("text")
 		.data(scaleSelection).enter()
 			.append("text")
-			.text(function(d){if(d=="cartodb_id")return "Ordre JSON";
+			.text(function(d){if(d=="exp_oa")return "Exploitations observees";
 				if(d=="exp_f")return "Exploitations familiales"
 				if(d=="exp")return "Exploitations"})
 			.attr("fill","white")

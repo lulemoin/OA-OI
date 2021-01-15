@@ -71,7 +71,7 @@ svg.append("rect")
 //Read the data
 
 var data=[{year:2010, value:Math.random()*10},{year:2011, value:Math.random()*10},{year:2012, value:Math.random()*10},{year:2013, value:Math.random()*10},{year:2014, value:Math.random()*10},{year:2015, value:undefined},{year:2016, value:undefined},{year:2017, value:Math.random()*10},{year:2018, value:Math.random()*10},{year:2019, value:Math.random()*10},{year:2020, value:Math.random()*10},{year:2021, value:Math.random()*10}]
-var data2=[{year:2010, value:Math.random()*10},{year:2011, value:Math.random()*10},{year:2012, value:Math.random()*10},{year:2013, value:Math.random()*10},{year:2014, value:Math.random()*10},{year:2015, value:Math.random()*10},{year:2016, value:Math.random()*10},{year:2017, value:Math.random()*10},{year:2018, value:Math.random()*10},{year:2019, value:Math.random()*10},{year:2020, value:Math.random()*10},{year:2021, value:Math.random()*10}]
+var data2=[{year:2010, value:Math.random()*10},{year:2011, value:undefined},{year:2012, value:Math.random()*10},{year:2013, value:Math.random()*10},{year:2014, value:Math.random()*10},{year:2015, value:Math.random()*10},{year:2016, value:Math.random()*10},{year:2017, value:Math.random()*10},{year:2018, value:undefined},{year:2019, value:Math.random()*10},{year:2020, value:Math.random()*10},{year:2021, value:Math.random()*10}]
 
 
 
@@ -79,7 +79,7 @@ var domain=d3.extent(data, function(d){return d.year})
 domain[0]-=0.5
 domain[1]+=0.5
 
-datas=[data]
+datas=[data, data2]
 clicked=[]
 count=datas.length
 
@@ -125,7 +125,7 @@ for(let k=0; k<datas.length; k++){
 
   svg.append("path")
   .attr("id",color[k]+"missing")
-      .datum(data.filter(line.defined()))
+      .datum(datas[k].filter(line.defined()))
       .attr("stroke", "#ccc")
       .attr("d", line0)
       .style("stroke-dasharray", ("3, 3"))
@@ -213,7 +213,7 @@ for(let k=0; k<datas.length; k++){
                   count-=1
                 }
         else{        
-          d3.select(this).attr("fill","steelblue")
+          d3.select(this).attr("fill",function(d){return d})
           d3.select("path#"+ i).transition().duration(800)
           .attr("d", line)
           d3.select("path#"+ i +"missing").transition().duration(800).attr("d",line)
