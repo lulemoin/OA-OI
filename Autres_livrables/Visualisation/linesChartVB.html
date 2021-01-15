@@ -44,7 +44,7 @@ svg{
 <body>
 
 
-<div>
+<div id="cadre_opacity">
     <label for="opacity" 
          style="display: inline-block; width: 240px; height: 50px; padding : 50px;text-align: right">
          Opacity =</label>
@@ -53,9 +53,25 @@ svg{
 </div>
 
 <!-- Create a div where the graph will take place -->
-<div id="my_dataviz" class="svg-container">
+<div id="my_dataviz" class="svg-container row">
 
 </div>
+
+<div class="row m-5"><br>a</div>
+<div class="row m-5"><br>a</div>
+<div class="row m-5"><br>a</div>
+<div class="row m-5"><br>a</div>
+<div class="row m-5"><br>a</div>
+<div class="row m-5"><br>a</div>
+<div class="row m-5"><br>a</div><div class="row m-5"><br>a</div>
+<div class="row m-5"><br>a</div>
+<div class="row m-5"><br>a</div>
+<div class="row m-5"><br>a</div>
+<div class="row m-5"><br>a</div>
+<div class="row m-5"><br>a</div>
+<div class="row m-5"><br>a</div>
+>
+<div class="row">a</div>
 
 <script>
 // set the dimensions and margins of the graph
@@ -67,12 +83,18 @@ var widthrect=200
 // append the svg object to the body of the page
 
 
+
+
+var dy=0
+var dx=1.6*dy
+
 var svg = d3.select("#my_dataviz")
   .append("svg")
   .attr("preserveAspectRatio", "xMinYMin meet")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
-  .attr("viewBox", "0 0 "+(width+200)+" "+ height)
+
+  .attr("viewBox", 0 +" "+ -dy +" "+(width+margin.left+margin.right)+" "+ (height+margin.top+margin.bottom))
   .classed("svg-content", true)
 
   .append("g")
@@ -91,6 +113,7 @@ var svg = d3.select("#my_dataviz")
       //      svg.attr("transform", d3.event.transform) 
       // })) 
 
+
 svg.append("rect")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -100,6 +123,22 @@ svg.append("rect")
     .attr("x",-margin.left).attr("y",-margin.top)
 
 
+ 
+d3.select("svg").transition().duration(400).attr("opacity",1);
+console.log(window.scrollY)
+// Visibility set to "block" when scrolling
+ 
+window.addEventListener("scroll", function(){
+ 
+  if(window.scrollY > 350){
+ 
+    d3.select("svg").transition().duration(200).attr("opacity",0);
+  }
+  else{
+ 
+    d3.select("svg").transition().duration(200).attr("opacity",1);
+  }
+}, false);
 
 //Read the data
 
@@ -358,6 +397,7 @@ var zoom = d3.zoom()
    
 // Call the Zoom. 
 svg.call(zoom); 
+
   /*svg.append("g").attr("id","circle").selectAll("circle").data(color).enter().append("circle").attr("id",function(d){return d})
       .attr("cx", function(d,i){return 120*i})
       .attr("cy",0)
